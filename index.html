@@ -173,6 +173,49 @@ select option{background:#fff;color:var(--text)}
 .toast{position:fixed;top:20px;left:50%;transform:translateX(-50%) translateY(-90px);background:var(--text);border-radius:24px;padding:12px 22px;font-size:13px;font-weight:700;color:#fff;z-index:999;box-shadow:0 4px 0 rgba(5,80,60,.4),0 8px 24px rgba(5,80,60,.25);transition:transform .3s cubic-bezier(.34,1.56,.64,1);white-space:nowrap}
 .toast.show{transform:translateX(-50%) translateY(0)}
 
+
+/* RAPOR PAGE */
+.rapor-year-nav{display:flex;align-items:center;justify-content:center;gap:16px;margin:16px 20px 14px;background:var(--surface);border:1.5px solid var(--border2);border-radius:32px;padding:10px 20px;box-shadow:0 4px 0 var(--border2)}
+.rapor-year-btn{background:var(--accent-bg);border:2px solid var(--accent-b);border-radius:20px;padding:6px 16px;font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;color:var(--accent);cursor:pointer;box-shadow:0 3px 0 var(--accent-b);transition:transform .08s,box-shadow .08s}
+.rapor-year-btn:active{transform:translateY(2px);box-shadow:0 1px 0 var(--accent-b)}
+.rapor-year-lbl{font-size:18px;font-weight:800;color:var(--text);min-width:60px;text-align:center}
+.rapor-summary{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:0 20px 14px}
+.rapor-scard{background:var(--surface);border:1.5px solid var(--border2);border-radius:var(--rs);padding:12px 10px;text-align:center;box-shadow:0 4px 0 var(--border2)}
+.rapor-scard-lbl{font-size:10px;text-transform:uppercase;letter-spacing:.06em;font-weight:800;color:var(--text3);margin-bottom:6px}
+.rapor-scard-val{font-size:14px;font-weight:800}
+.rapor-scard-val.inc{color:var(--green)}
+.rapor-scard-val.exp{color:var(--red)}
+.rapor-scard-val.bal{color:var(--accent)}
+.rapor-months{display:flex;flex-direction:column;gap:8px;margin:0 20px 14px}
+.rapor-mrow{background:var(--surface);border:1.5px solid var(--border2);border-radius:var(--rs);padding:14px 16px;box-shadow:0 4px 0 var(--border2);cursor:pointer;transition:transform .08s,box-shadow .08s}
+.rapor-mrow:active{transform:translateY(2px);box-shadow:0 1px 0 var(--border2)}
+.rapor-mrow.cur-month{border-color:var(--accent);box-shadow:0 4px 0 var(--accent-b)}
+.rapor-mhead{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.rapor-mname{font-size:15px;font-weight:800;flex:1}
+.rapor-mbadge{font-size:11px;font-weight:800;padding:3px 10px;border-radius:12px}
+.rapor-mbadge.pos{background:var(--green-bg);color:var(--green)}
+.rapor-mbadge.neg{background:var(--red-bg);color:var(--red)}
+.rapor-mbadge.zero{background:var(--surface2);color:var(--text3)}
+.rapor-mbars{display:flex;flex-direction:column;gap:4px}
+.rapor-mbar-row{display:flex;align-items:center;gap:8px}
+.rapor-mbar-lbl{font-size:11px;font-weight:700;color:var(--text3);width:32px}
+.rapor-mbar-track{flex:1;height:6px;background:var(--surface3);border-radius:3px;overflow:hidden}
+.rapor-mbar-fill{height:100%;border-radius:3px;transition:width .5s}
+.rapor-mbar-fill.inc{background:linear-gradient(90deg,#16b97a,#6be0a0)}
+.rapor-mbar-fill.exp{background:linear-gradient(90deg,#f05a7e,#f888a0)}
+.rapor-mbar-amt{font-size:11px;font-weight:800;min-width:60px;text-align:right}
+.rapor-mbar-amt.inc{color:var(--green)}
+.rapor-mbar-amt.exp{color:var(--red)}
+.rapor-best{margin:0 20px 14px;background:var(--surface);border:1.5px solid var(--border2);border-radius:var(--rs);padding:16px;box-shadow:0 4px 0 var(--border2)}
+.rapor-best-title{font-size:11px;text-transform:uppercase;letter-spacing:.08em;font-weight:800;color:var(--text3);margin-bottom:12px}
+.rapor-best-row{display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid var(--border)}
+.rapor-best-row:last-child{border-bottom:none;padding-bottom:0}
+.rapor-best-ico{font-size:20px;width:32px;text-align:center}
+.rapor-best-info{flex:1}
+.rapor-best-nm{font-size:13px;font-weight:700}
+.rapor-best-sub{font-size:11px;color:var(--text3);font-weight:600;margin-top:1px}
+.rapor-best-amt{font-size:13px;font-weight:800}
+
 .page{display:none} .page.active{display:block}
 </style>
 </head>
@@ -260,12 +303,32 @@ select option{background:#fff;color:var(--text)}
   </div>
 </div>
 
+<!-- RAPOR -->
+<div class="page" id="page-rapor">
+  <div style="padding:16px 0 0">
+    <div class="rapor-year-nav">
+      <button class="rapor-year-btn" id="rYearPrev">◀</button>
+      <div class="rapor-year-lbl" id="rYearLbl">2026</div>
+      <button class="rapor-year-btn" id="rYearNext">▶</button>
+    </div>
+    <div class="rapor-summary">
+      <div class="rapor-scard"><div class="rapor-scard-lbl">Yıllık Gelir</div><div class="rapor-scard-val inc" id="rTotInc">₺0</div></div>
+      <div class="rapor-scard"><div class="rapor-scard-lbl">Yıllık Gider</div><div class="rapor-scard-val exp" id="rTotExp">₺0</div></div>
+      <div class="rapor-scard"><div class="rapor-scard-lbl">Net Tasarruf</div><div class="rapor-scard-val bal" id="rTotBal">₺0</div></div>
+    </div>
+    <div class="rapor-best" id="rBestCat"></div>
+    <div style="margin:0 20px 10px"><div class="sec-title">Aylık Özet</div></div>
+    <div class="rapor-months" id="rMonths"></div>
+  </div>
+</div>
+
 <button class="add-btn" id="addBtn"><span style="font-size:22px;line-height:1">＋</span> İşlem Ekle</button>
 
 <div class="bnav">
   <div class="nitem active" data-page="dashboard"><div class="nico">🏠</div><div>Özet</div></div>
   <div class="nitem" data-page="chart"><div class="nico">🥧</div><div>Grafik</div></div>
   <div class="nitem" data-page="budget"><div class="nico">🎯</div><div>Bütçe</div></div>
+  <div class="nitem" data-page="rapor"><div class="nico">📋</div><div>Rapor</div></div>
 </div>
 
 <!-- ADD MODAL -->
@@ -573,6 +636,7 @@ document.querySelectorAll('.nitem').forEach(el=>{
     document.querySelectorAll('.nitem').forEach(n=>n.classList.remove('active'));
     el.classList.add('active');
     if(pg==='chart'){selSlice=null;renderPie();}
+    if(pg==='rapor'){raporYear=curYear;renderRapor();}
   });
 });
 
@@ -693,6 +757,100 @@ document.querySelectorAll('.modal').forEach(modal=>{
   let sy=0;
   modal.addEventListener('touchstart',e=>sy=e.touches[0].clientY,{passive:true});
   modal.addEventListener('touchend',e=>{if(e.changedTouches[0].clientY-sy>80)modal.closest('.moverlay').classList.remove('show');},{passive:true});
+});
+
+
+// ── RAPOR ──
+let raporYear = new Date().getFullYear();
+
+function renderRapor() {
+  document.getElementById('rYearLbl').textContent = raporYear;
+  const yearTxs = txs.filter(t=>new Date(t.date).getFullYear()===raporYear);
+  const yInc = yearTxs.filter(t=>t.type==='income').reduce((a,t)=>a+t.amount,0);
+  const yExp = yearTxs.filter(t=>t.type==='expense').reduce((a,t)=>a+t.amount,0);
+  const yBal = yInc - yExp;
+  document.getElementById('rTotInc').textContent = '₺'+fmt(yInc);
+  document.getElementById('rTotExp').textContent = '₺'+fmt(yExp);
+  const balEl = document.getElementById('rTotBal');
+  balEl.textContent = (yBal>=0?'+':'')+'₺'+fmt(Math.abs(yBal));
+  balEl.style.color = yBal>=0?'var(--green)':'var(--red)';
+
+  // En çok harcanan kategori
+  const expCats = CATS.filter(c=>!INC_IDS.includes(c.id));
+  const catTotals = expCats.map(c=>({
+    cat:c,
+    amt:yearTxs.filter(t=>t.type==='expense'&&t.category===c.id).reduce((a,t)=>a+t.amount,0)
+  })).filter(x=>x.amt>0).sort((a,b)=>b.amt-a.amt).slice(0,4);
+
+  const bestEl = document.getElementById('rBestCat');
+  if (catTotals.length) {
+    bestEl.innerHTML = '<div class="rapor-best-title">🏆 En Çok Harcanan Kategoriler</div>'
+      + catTotals.map((x,i)=>{
+        const medals=['🥇','🥈','🥉','4️⃣'];
+        const pct = yExp>0?Math.round((x.amt/yExp)*100):0;
+        return '<div class="rapor-best-row">'
+          +'<div class="rapor-best-ico">'+medals[i]+'</div>'
+          +'<div class="rapor-best-info"><div class="rapor-best-nm">'+x.cat.emoji+' '+x.cat.name+'</div>'
+          +'<div class="rapor-best-sub">Toplam giderin %'+pct+'</div></div>'
+          +'<div class="rapor-best-amt" style="color:var(--red)">₺'+fmt(x.amt)+'</div>'
+          +'</div>';
+      }).join('');
+    bestEl.style.display='';
+  } else {
+    bestEl.style.display='none';
+  }
+
+  // Aylık özet
+  const maxInc = Math.max(1,...Array.from({length:12},(_,m)=>
+    yearTxs.filter(t=>new Date(t.date).getMonth()===m&&t.type==='income').reduce((a,t)=>a+t.amount,0)
+  ));
+  const maxExp = Math.max(1,...Array.from({length:12},(_,m)=>
+    yearTxs.filter(t=>new Date(t.date).getMonth()===m&&t.type==='expense').reduce((a,t)=>a+t.amount,0)
+  ));
+  const maxV = Math.max(maxInc, maxExp);
+  const now = new Date();
+
+  document.getElementById('rMonths').innerHTML = Array.from({length:12},(_,m)=>{
+    const mTxs = yearTxs.filter(t=>new Date(t.date).getMonth()===m);
+    const inc = mTxs.filter(t=>t.type==='income').reduce((a,t)=>a+t.amount,0);
+    const exp = mTxs.filter(t=>t.type==='expense').reduce((a,t)=>a+t.amount,0);
+    const bal = inc-exp;
+    const isCur = m===curMonth&&raporYear===curYear;
+    const isFuture = raporYear>now.getFullYear()||(raporYear===now.getFullYear()&&m>now.getMonth());
+    if(isFuture&&inc===0&&exp===0) return '';
+    const badgeCls = bal>0?'pos':bal<0?'neg':'zero';
+    const badgeTxt = bal>0?'+₺'+fmt(bal):bal<0?'-₺'+fmt(Math.abs(bal)):'Veri yok';
+    const incW = maxV>0?Math.round((inc/maxV)*100):0;
+    const expW = maxV>0?Math.round((exp/maxV)*100):0;
+    return '<div class="rapor-mrow'+(isCur?' cur-month':'')+'" onclick="goToMonth('+m+','+raporYear+')">'
+      +'<div class="rapor-mhead">'
+      +'<div class="rapor-mname">'+(isCur?'📍 ':'')+MONTHS[m]+'</div>'
+      +'<div class="rapor-mbadge '+badgeCls+'">'+badgeTxt+'</div>'
+      +'</div>'
+      +(inc>0||exp>0?
+        '<div class="rapor-mbars">'
+        +'<div class="rapor-mbar-row"><div class="rapor-mbar-lbl">💰</div><div class="rapor-mbar-track"><div class="rapor-mbar-fill inc" style="width:'+incW+'%"></div></div><div class="rapor-mbar-amt inc">₺'+fmt(inc)+'</div></div>'
+        +'<div class="rapor-mbar-row"><div class="rapor-mbar-lbl">💸</div><div class="rapor-mbar-track"><div class="rapor-mbar-fill exp" style="width:'+expW+'%"></div></div><div class="rapor-mbar-amt exp">₺'+fmt(exp)+'</div></div>'
+        +'</div>'
+      :'<div style="font-size:12px;color:var(--text3);font-weight:600">Kayıt yok</div>')
+      +'</div>';
+  }).join('');
+}
+
+function goToMonth(m, y) {
+  curMonth=m; curYear=y;
+  refreshDashboard();
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-dashboard').classList.add('active');
+  document.querySelectorAll('.nitem').forEach(n=>n.classList.remove('active'));
+  document.querySelector('[data-page="dashboard"]').classList.add('active');
+  showToast(MONTHS[m]+' '+y+' ayına geçildi 📅');
+}
+
+document.getElementById('rYearPrev').addEventListener('click',()=>{ raporYear--; renderRapor(); });
+document.getElementById('rYearNext').addEventListener('click',()=>{
+  if(raporYear<new Date().getFullYear()) { raporYear++; renderRapor(); }
+  else showToast('Gelecek yıl verisi yok 😄');
 });
 
 function showToast(msg){
