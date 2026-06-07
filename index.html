@@ -41,8 +41,7 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-
 .bal-sub b{color:#fff}
 .stats-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 20px 14px}
 .stat-card{background:var(--surface);border-radius:var(--rs);padding:16px;border:1.5px solid var(--border2);cursor:default}
-.stat-card.inc{box-shadow:0 5px 0 var(--green-b)}
-.stat-card.exp{box-shadow:0 5px 0 var(--red-b)}
+.stat-card.inc{box-shadow:0 5px 0 var(--green-b)}.stat-card.exp{box-shadow:0 5px 0 var(--red-b)}
 .stat-icon{font-size:24px;margin-bottom:8px}
 .stat-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--text3)}
 .stat-val{font-size:20px;font-weight:800;margin-top:3px}
@@ -91,10 +90,8 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-
 .cat-list{display:flex;flex-direction:column;gap:10px}
 .cat-item{background:var(--surface);border:1.5px solid var(--border2);border-radius:var(--rs);padding:14px 16px;box-shadow:0 4px 0 var(--border2)}
 .cat-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
-.cat-ico{font-size:22px}
-.cat-nm{flex:1;font-size:14px;font-weight:700}
-.cat-amts{text-align:right}
-.cat-spent{font-size:14px;font-weight:800}
+.cat-ico{font-size:22px}.cat-nm{flex:1;font-size:14px;font-weight:700}
+.cat-amts{text-align:right}.cat-spent{font-size:14px;font-weight:800}
 .cat-lim{font-size:11px;color:var(--text3);font-weight:600}
 .cat-bar{height:6px;background:var(--surface3);border-radius:3px;overflow:hidden}
 .cat-fill{height:100%;border-radius:3px;transition:width .5s}
@@ -112,6 +109,7 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-
 .pl-nm{flex:1;font-size:13px;font-weight:700}
 .pl-pct{font-size:12px;font-weight:800;color:var(--text2)}
 .pl-amt{font-size:14px;font-weight:800}
+/* RAPOR */
 .rapor-year-nav{display:flex;align-items:center;justify-content:center;gap:16px;margin:16px 20px 14px;background:var(--surface);border:1.5px solid var(--border2);border-radius:32px;padding:10px 20px;box-shadow:0 4px 0 var(--border2)}
 .rapor-year-btn{background:var(--accent-bg);border:2px solid var(--accent-b);border-radius:20px;padding:6px 16px;font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;color:var(--accent);cursor:pointer;box-shadow:0 3px 0 var(--accent-b);transition:transform .08s,box-shadow .08s}
 .rapor-year-btn:active{transform:translateY(2px);box-shadow:0 1px 0 var(--accent-b)}
@@ -121,34 +119,46 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-
 .rapor-scard-lbl{font-size:10px;text-transform:uppercase;letter-spacing:.06em;font-weight:800;color:var(--text3);margin-bottom:6px}
 .rapor-scard-val{font-size:14px;font-weight:800}
 .rapor-scard-val.inc{color:var(--green)}.rapor-scard-val.exp{color:var(--red)}.rapor-scard-val.bal{color:var(--accent)}
-.rapor-months{display:flex;flex-direction:column;gap:8px;margin:0 20px 14px}
-.rapor-mrow{background:var(--surface);border:1.5px solid var(--border2);border-radius:var(--rs);padding:14px 16px;box-shadow:0 4px 0 var(--border2);cursor:pointer;transition:transform .08s,box-shadow .08s}
-.rapor-mrow:active{transform:translateY(2px);box-shadow:0 1px 0 var(--border2)}
-.rapor-mrow.cur-month{border-color:var(--accent);box-shadow:0 4px 0 var(--accent-b)}
-.rapor-mhead{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-.rapor-mname{font-size:15px;font-weight:800;flex:1}
-.rapor-mbadge{font-size:11px;font-weight:800;padding:3px 10px;border-radius:12px}
-.rapor-mbadge.pos{background:var(--green-bg);color:var(--green)}
-.rapor-mbadge.neg{background:var(--red-bg);color:var(--red)}
-.rapor-mbadge.zero{background:var(--surface2);color:var(--text3)}
-.rapor-mbars{display:flex;flex-direction:column;gap:4px}
-.rapor-mbar-row{display:flex;align-items:center;gap:8px}
-.rapor-mbar-lbl{font-size:11px;font-weight:700;color:var(--text3);width:28px}
-.rapor-mbar-track{flex:1;height:6px;background:var(--surface3);border-radius:3px;overflow:hidden}
-.rapor-mbar-fill{height:100%;border-radius:3px}
-.rapor-mbar-fill.inc{background:linear-gradient(90deg,#16b97a,#6be0a0)}
-.rapor-mbar-fill.exp{background:linear-gradient(90deg,#f05a7e,#f888a0)}
-.rapor-mbar-amt{font-size:11px;font-weight:800;min-width:58px;text-align:right}
-.rapor-mbar-amt.inc{color:var(--green)}.rapor-mbar-amt.exp{color:var(--red)}
 .rapor-best{margin:0 20px 14px;background:var(--surface);border:1.5px solid var(--border2);border-radius:var(--rs);padding:16px;box-shadow:0 4px 0 var(--border2)}
 .rapor-best-title{font-size:11px;text-transform:uppercase;letter-spacing:.08em;font-weight:800;color:var(--text3);margin-bottom:12px}
 .rapor-best-row{display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid var(--border)}
 .rapor-best-row:last-child{border-bottom:none;padding-bottom:0}
 .rapor-best-ico{font-size:20px;width:32px;text-align:center}
-.rapor-best-info{flex:1}
-.rapor-best-nm{font-size:13px;font-weight:700}
+.rapor-best-info{flex:1}.rapor-best-nm{font-size:13px;font-weight:700}
 .rapor-best-sub{font-size:11px;color:var(--text3);font-weight:600;margin-top:1px}
 .rapor-best-amt{font-size:13px;font-weight:800}
+/* Highlight kartlar */
+.rapor-highlight{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 20px 14px}
+.rapor-hl-card{background:var(--surface);border:1.5px solid var(--border2);border-radius:var(--rs);padding:14px;box-shadow:0 4px 0 var(--border2);text-align:center}
+.rapor-hl-ico{font-size:22px;margin-bottom:6px}
+.rapor-hl-lbl{font-size:10px;font-weight:800;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.rapor-hl-val{font-size:15px;font-weight:800}
+.rapor-hl-sub{font-size:11px;font-weight:700;color:var(--text2);margin-top:3px}
+/* Ay grid */
+.rapor-month-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 20px 14px}
+.rapor-mgrid-item{background:var(--surface);border:1.5px solid var(--border2);border-radius:var(--rs);padding:12px 14px;box-shadow:0 4px 0 var(--border2);cursor:pointer;transition:transform .08s,box-shadow .08s;position:relative;overflow:hidden}
+.rapor-mgrid-item:active{transform:translateY(2px);box-shadow:0 1px 0 var(--border2)}
+.rapor-mgrid-item.cur-m{border-color:var(--accent);box-shadow:0 4px 0 var(--accent-b)}
+.rapor-mgrid-item.best-m{border-color:var(--green);box-shadow:0 4px 0 var(--green-b)}
+.rapor-mgrid-item.worst-m{border-color:var(--red);box-shadow:0 4px 0 var(--red-b)}
+.rm-name{font-size:13px;font-weight:800;color:var(--text);margin-bottom:5px}
+.rm-badge{font-size:10px;font-weight:800;padding:2px 8px;border-radius:10px;display:inline-block;margin-bottom:6px}
+.rm-badge.pos{background:var(--green-bg);color:var(--green)}
+.rm-badge.neg{background:var(--red-bg);color:var(--red)}
+.rm-badge.zero{background:var(--surface2);color:var(--text3)}
+.rm-row{display:flex;justify-content:space-between;font-size:11px;font-weight:700;margin-top:3px}
+.rm-save{font-size:10px;font-weight:800;color:var(--accent);margin-top:4px}
+.rm-flag{position:absolute;top:8px;right:8px;font-size:12px}
+.rm-empty{font-size:11px;color:var(--text3);font-weight:600}
+/* Rapor ay detay modal */
+.rmd-sum{background:var(--surface2);border:1.5px solid var(--border2);border-radius:var(--rs);padding:14px 16px;margin-bottom:16px;display:flex;justify-content:space-between;align-items:center}
+.rmd-item{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--surface);border:1.5px solid var(--border2);border-radius:var(--rs);margin-bottom:8px;box-shadow:0 3px 0 var(--border2)}
+.rmd-cat-hdr{display:flex;justify-content:space-between;align-items:center;padding:8px 2px 6px;margin-top:4px}
+/* Cat detail */
+.cat-detail-item{display:flex;align-items:center;gap:10px;padding:12px 14px;background:var(--surface);border:1.5px solid var(--border2);border-radius:var(--rs);box-shadow:0 3px 0 var(--border2);margin-bottom:8px}
+.cat-detail-date{font-size:11px;color:var(--text3);font-weight:700;margin-top:2px}
+.cat-detail-total{background:var(--surface2);border:1.5px solid var(--border2);border-radius:var(--rs);padding:12px 16px;margin-bottom:14px;display:flex;justify-content:space-between;align-items:center}
+/* Butonlar */
 .add-btn{position:fixed;bottom:84px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#0fb8a8,#1ab4d4);color:#fff;border:none;border-radius:32px;padding:16px 36px;font-family:'Nunito',sans-serif;font-size:16px;font-weight:800;cursor:pointer;display:flex;align-items:center;gap:8px;box-shadow:0 7px 0 var(--accent-s),0 10px 28px rgba(15,184,168,.4);transition:transform .08s,box-shadow .08s;white-space:nowrap;z-index:100}
 .add-btn:active{transform:translateX(-50%) translateY(5px);box-shadow:0 2px 0 var(--accent-s)}
 .edit-btn{background:var(--accent-bg);border:2px solid var(--accent-b);border-radius:12px;padding:7px 14px;color:var(--accent);font-size:13px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;box-shadow:0 4px 0 var(--accent-b);transition:transform .08s,box-shadow .08s}
@@ -157,8 +167,7 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-
 .cat-edit-btn:active{transform:translateY(3px);box-shadow:0 1px 0 var(--green-b)}
 .bnav{position:fixed;bottom:0;left:0;right:0;max-width:430px;margin:0 auto;background:var(--surface);border-top:1.5px solid var(--border2);display:flex;z-index:99;box-shadow:0 -4px 20px rgba(15,184,168,.08)}
 .nitem{flex:1;display:flex;flex-direction:column;align-items:center;padding:10px 0 18px;gap:4px;cursor:pointer;color:var(--text3);font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;transition:color .2s}
-.nitem.active{color:var(--accent)}
-.nico{font-size:22px}
+.nitem.active{color:var(--accent)}.nico{font-size:22px}
 .moverlay{position:fixed;inset:0;background:rgba(5,50,40,.4);backdrop-filter:blur(6px);z-index:200;display:flex;align-items:flex-end;opacity:0;pointer-events:none;transition:opacity .22s}
 .moverlay.show{opacity:1;pointer-events:all}
 .modal{width:100%;max-width:430px;margin:0 auto;background:var(--surface);border:1.5px solid var(--border2);border-radius:28px 28px 0 0;padding:12px 20px 44px;transform:translateY(100%);transition:transform .3s cubic-bezier(.34,1.4,.64,1);box-shadow:0 -8px 32px rgba(15,184,168,.15)}
@@ -183,11 +192,9 @@ select option{background:#fff;color:var(--text)}
 .bgt-row{display:flex;align-items:center;gap:10px;margin-bottom:12px}
 .bgt-row label{width:90px;font-size:13px;font-weight:700;color:var(--text2);flex-shrink:0}
 .cat-modal-item{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--surface);border:1.5px solid var(--border2);border-radius:var(--rs);margin-bottom:8px;box-shadow:0 3px 0 var(--border2)}
-.cat-modal-emoji{font-size:22px;width:36px;text-align:center}
-.cat-modal-name{flex:1;font-size:14px;font-weight:700}
+.cat-modal-emoji{font-size:22px;width:36px;text-align:center}.cat-modal-name{flex:1;font-size:14px;font-weight:700}
 .cat-modal-type{font-size:10px;font-weight:800;padding:2px 8px;border-radius:10px}
-.cat-modal-type.inc{background:var(--green-bg);color:var(--green)}
-.cat-modal-type.exp{background:var(--red-bg);color:var(--red)}
+.cat-modal-type.inc{background:var(--green-bg);color:var(--green)}.cat-modal-type.exp{background:var(--red-bg);color:var(--red)}
 .cat-del-btn{background:none;border:none;font-size:16px;cursor:pointer;color:var(--text3);padding:4px}
 .emoji-grid{display:none;flex-wrap:wrap;gap:6px;margin-bottom:10px;max-height:120px;overflow-y:auto;background:var(--surface2);border-radius:var(--rx);padding:8px}
 .toast{position:fixed;top:20px;left:50%;transform:translateX(-50%) translateY(-90px);background:var(--text);border-radius:24px;padding:12px 22px;font-size:13px;font-weight:700;color:#fff;z-index:999;box-shadow:0 4px 0 rgba(5,80,60,.4),0 8px 24px rgba(5,80,60,.25);transition:transform .3s cubic-bezier(.34,1.56,.64,1);white-space:nowrap}
@@ -285,12 +292,12 @@ select option{background:#fff;color:var(--text)}
       <div class="rapor-scard"><div class="rapor-scard-lbl">Net Tasarruf</div><div class="rapor-scard-val bal" id="rTotBal">₺0</div></div>
     </div>
     <div class="rapor-best" id="rBestCat"></div>
+    <div class="rapor-highlight" id="rHighlight" style="display:none"></div>
     <div style="margin:0 20px 10px"><div class="sec-title">Aylık Özet</div></div>
-    <div class="rapor-months" id="rMonths"></div>
+    <div class="rapor-month-grid" id="rMonths"></div>
   </div>
 </div>
 
-<!-- AYARLAR -->
 <div class="page" id="page-ayarlar">
   <div style="padding:20px 0 0">
     <div class="section">
@@ -317,6 +324,29 @@ select option{background:#fff;color:var(--text)}
   <div class="nitem" data-page="budget"><div class="nico">🎯</div><div>Bütçe</div></div>
   <div class="nitem" data-page="rapor"><div class="nico">📋</div><div>Rapor</div></div>
   <div class="nitem" data-page="ayarlar"><div class="nico">⚙️</div><div>Ayarlar</div></div>
+</div>
+
+<!-- CAT DETAIL MODAL -->
+<div class="moverlay" id="catDetailModal">
+  <div class="modal" style="max-height:85vh;overflow-y:auto">
+    <div class="mhandle"></div>
+    <div class="mtitle" id="catDetailTitle"></div>
+    <div class="cat-detail-total">
+      <span style="font-size:13px;font-weight:700;color:var(--text2)" id="catDetailPeriod"></span>
+      <span style="font-size:18px;font-weight:800" id="catDetailTotal"></span>
+    </div>
+    <div id="catDetailList"></div>
+  </div>
+</div>
+
+<!-- RAPOR AY DETAY MODAL -->
+<div class="moverlay" id="raporMonthModal">
+  <div class="modal" style="max-height:88vh;overflow-y:auto">
+    <div class="mhandle"></div>
+    <div class="mtitle" id="rmdTitle"></div>
+    <div class="rmd-sum" id="rmdSum"></div>
+    <div id="rmdBody"></div>
+  </div>
 </div>
 
 <!-- ADD MODAL -->
@@ -369,147 +399,97 @@ select option{background:#fff;color:var(--text)}
 </div>
 
 <script>
-const EMOJIS = ['🛒','🍽️','🚇','🏠','💊','🎬','👗','📚','🏦','📦','💼','💻','🏘️','☕','🐾','✈️','🎮','🏋️','💇','🚗','🎁','📱','🍕','🌿','💈','🎨','🏖️','🎵','📷','🏥','⚡','🧴','🧹','🛠️','🌍','🎓','👶','🐶','🍺','🎪'];
-const MONTHS = ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'];
-const PIE_COLORS = ['#0fb8a8','#f05a7e','#1ab4d4','#e8960a','#16b97a','#8b5cf6','#22b8c8','#e87c5c','#8bce3a','#c85c22'];
-const DEFAULT_CATS = [
-  {id:'market',  name:'Market',          emoji:'🛒', isIncome:false},
-  {id:'yemek',   name:'Yemek & Restoran',emoji:'🍽️', isIncome:false},
-  {id:'ulasim',  name:'Ulaşım',          emoji:'🚇', isIncome:false},
-  {id:'kira',    name:'Kira & Fatura',   emoji:'🏠', isIncome:false},
-  {id:'saglik',  name:'Sağlık',          emoji:'💊', isIncome:false},
-  {id:'eglence', name:'Eğlence',         emoji:'🎬', isIncome:false},
-  {id:'giyim',   name:'Giyim',           emoji:'👗', isIncome:false},
-  {id:'egitim',  name:'Eğitim',          emoji:'📚', isIncome:false},
-  {id:'tasarruf',name:'Tasarruf',        emoji:'🏦', isIncome:false},
-  {id:'diger',   name:'Diğer',           emoji:'📦', isIncome:false},
-  {id:'maas',    name:'Maaş',            emoji:'💼', isIncome:true},
-  {id:'freelance',name:'Freelance',      emoji:'💻', isIncome:true},
-  {id:'kirageliri',name:'Kira Geliri',   emoji:'🏘️', isIncome:true},
+const EMOJIS=['🛒','🍽️','🚇','🏠','💊','🎬','👗','📚','🏦','📦','💼','💻','🏘️','☕','🐾','✈️','🎮','🏋️','💇','🚗','🎁','📱','🍕','🌿','💈','🎨','🏖️','🎵','📷','🏥','⚡','🧴','🧹','🛠️','🌍','🎓','👶','🐶','🍺','🎪'];
+const MONTHS=['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'];
+const PIE_COLORS=['#0fb8a8','#f05a7e','#1ab4d4','#e8960a','#16b97a','#8b5cf6','#22b8c8','#e87c5c','#8bce3a','#c85c22'];
+const DEFAULT_CATS=[
+  {id:'market',name:'Market',emoji:'🛒',isIncome:false},
+  {id:'yemek',name:'Yemek & Restoran',emoji:'🍽️',isIncome:false},
+  {id:'ulasim',name:'Ulaşım',emoji:'🚇',isIncome:false},
+  {id:'kira',name:'Kira & Fatura',emoji:'🏠',isIncome:false},
+  {id:'saglik',name:'Sağlık',emoji:'💊',isIncome:false},
+  {id:'eglence',name:'Eğlence',emoji:'🎬',isIncome:false},
+  {id:'giyim',name:'Giyim',emoji:'👗',isIncome:false},
+  {id:'egitim',name:'Eğitim',emoji:'📚',isIncome:false},
+  {id:'tasarruf',name:'Tasarruf',emoji:'🏦',isIncome:false},
+  {id:'diger',name:'Diğer',emoji:'📦',isIncome:false},
+  {id:'maas',name:'Maaş',emoji:'💼',isIncome:true},
+  {id:'freelance',name:'Freelance',emoji:'💻',isIncome:true},
+  {id:'kirageliri',name:'Kira Geliri',emoji:'🏘️',isIncome:true},
 ];
-function catBg(c){ return c.isIncome ? '#e2f9ef' : '#eaf1ff'; }
-function catBr(c){ return c.isIncome ? '#96e8c8' : '#b8d0ff'; }
+function catBg(c){return c.isIncome?'#e2f9ef':'#eaf1ff';}
+function catBr(c){return c.isIncome?'#96e8c8':'#b8d0ff';}
+let CATS=JSON.parse(localStorage.getItem('bcats')||'null')||DEFAULT_CATS.map(c=>({...c}));
+let txs=JSON.parse(localStorage.getItem('btx')||'[]');
+let budgets=JSON.parse(localStorage.getItem('bbg')||'{}');
+let curType='expense',curFilter='all';
+let curMonth=new Date().getMonth(),curYear=new Date().getFullYear();
+let pieMode='expense',selSlice=null;
+let pieMonth=new Date().getMonth(),pieYear=new Date().getFullYear();
+let raporYear=new Date().getFullYear();
+let newCatIsIncome=false,selEmoji='😀';
+let startDay=parseInt(localStorage.getItem('bstartday')||'1');
 
-let CATS = JSON.parse(localStorage.getItem('bcats') || 'null') || DEFAULT_CATS.map(c=>({...c}));
-let txs = JSON.parse(localStorage.getItem('btx') || '[]');
-let budgets = JSON.parse(localStorage.getItem('bbg') || '{}');
-let curType = 'expense';
-let curFilter = 'all';
-let curMonth = new Date().getMonth();
-let curYear = new Date().getFullYear();
-let pieMode = 'expense';
-let selSlice = null;
-let pieMonth = new Date().getMonth();
-let pieYear = new Date().getFullYear();
-let raporYear = new Date().getFullYear();
-let newCatIsIncome = false;
-let selEmoji = '😀';
-let startDay = parseInt(localStorage.getItem('bstartday') || '1');
+function save(){localStorage.setItem('btx',JSON.stringify(txs));localStorage.setItem('bbg',JSON.stringify(budgets));}
+function saveCats(){localStorage.setItem('bcats',JSON.stringify(CATS));}
+function saveStartDay(){localStorage.setItem('bstartday',startDay);}
+function fmt(n){return n.toLocaleString('tr-TR',{minimumFractionDigits:0,maximumFractionDigits:2});}
+function getCat(id){return CATS.find(c=>c.id===id)||CATS[CATS.length-1];}
+function isIncCat(c){return c.isIncome===true;}
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2300);}
 
-function save(){ localStorage.setItem('btx',JSON.stringify(txs)); localStorage.setItem('bbg',JSON.stringify(budgets)); }
-function saveCats(){ localStorage.setItem('bcats',JSON.stringify(CATS)); }
-function saveStartDay(){ localStorage.setItem('bstartday', startDay); }
-function fmt(n){ return n.toLocaleString('tr-TR',{minimumFractionDigits:0,maximumFractionDigits:2}); }
-function getCat(id){ return CATS.find(c=>c.id===id) || CATS[CATS.length-1]; }
-function isIncCat(c){ return c.isIncome === true; }
-
-// Dönem başlangıç ve bitiş tarihlerini hesapla (startDay'e göre)
-function getPeriodRange(month, year) {
-  if(startDay === 1) {
-    const start = new Date(year, month, 1);
-    const end = new Date(year, month+1, 0);
-    return {start, end};
-  }
-  // Örn: startDay=15 → 15 Mayıs - 14 Haziran
-  const start = new Date(year, month, startDay);
-  const end = new Date(year, month+1, startDay-1);
-  return {start, end};
+function getPeriodRange(month,year){
+  if(startDay===1){return{start:new Date(year,month,1),end:new Date(year,month+1,0)};}
+  return{start:new Date(year,month,startDay),end:new Date(year,month+1,startDay-1)};
 }
-
-function periodLabel(month, year) {
-  if(startDay === 1) return MONTHS[month]+' '+year;
-  const {start, end} = getPeriodRange(month, year);
-  const s = start.toLocaleDateString('tr-TR',{day:'numeric',month:'short'});
-  const e = end.toLocaleDateString('tr-TR',{day:'numeric',month:'short'});
-  return s+' – '+e;
+function periodLabel(month,year){
+  if(startDay===1)return MONTHS[month]+' '+year;
+  const{start,end}=getPeriodRange(month,year);
+  return start.toLocaleDateString('tr-TR',{day:'numeric',month:'short'})+' – '+end.toLocaleDateString('tr-TR',{day:'numeric',month:'short'});
 }
-
 function monthTxs(){
-  if(startDay === 1) {
-    return txs.filter(t=>{const d=new Date(t.date);return d.getMonth()===curMonth&&d.getFullYear()===curYear;});
-  }
-  const {start, end} = getPeriodRange(curMonth, curYear);
-  return txs.filter(t=>{
-    const d = new Date(t.date+'T12:00:00');
-    return d >= start && d <= end;
-  });
+  if(startDay===1)return txs.filter(t=>{const d=new Date(t.date);return d.getMonth()===curMonth&&d.getFullYear()===curYear;});
+  const{start,end}=getPeriodRange(curMonth,curYear);
+  return txs.filter(t=>{const d=new Date(t.date+'T12:00:00');return d>=start&&d<=end;});
 }
+function calMonthTxs(m,y){return txs.filter(t=>{const d=new Date(t.date+'T12:00:00');return d.getMonth()===m&&d.getFullYear()===y;});}
 
-// ── AYARLAR ──
-function renderDayGrid() {
-  const grid = document.getElementById('dayGrid');
-  if(!grid) return;
-  const days = [1,5,10,14,15,16,20,25,28,30];
-  grid.innerHTML = days.map(d => {
-    const sel = startDay===d;
-    return '<button onclick="setStartDay('+d+')" style="padding:10px 4px;border-radius:'+( sel?'10px':'8px')+';border:2px solid '+(sel?'var(--accent)':'var(--border2)')+';background:'+(sel?'var(--accent)':'var(--surface2)')+';color:'+(sel?'#fff':'var(--text2)')+';font-family:Nunito,sans-serif;font-size:14px;font-weight:800;cursor:pointer;box-shadow:0 3px 0 '+(sel?'var(--accent-s)':'var(--border2)')+';transition:all .15s">'+d+'</button>';
+// AYARLAR
+function renderDayGrid(){
+  const grid=document.getElementById('dayGrid');if(!grid)return;
+  const days=[1,5,10,14,15,16,20,25,28,30];
+  grid.innerHTML=days.map(d=>{
+    const sel=startDay===d;
+    return '<button onclick="setStartDay('+d+')" style="padding:10px 4px;border-radius:'+(sel?'10px':'8px')+';border:2px solid '+(sel?'var(--accent)':'var(--border2)')+';background:'+(sel?'var(--accent)':'var(--surface2)')+';color:'+(sel?'#fff':'var(--text2)')+';font-family:Nunito,sans-serif;font-size:14px;font-weight:800;cursor:pointer;box-shadow:0 3px 0 '+(sel?'var(--accent-s)':'var(--border2)')+';transition:all .15s">'+d+'</button>';
   }).join('');
-  updateDayPreview();
+  const prev=document.getElementById('dayPreview');if(!prev)return;
+  prev.textContent=startDay===1?'Takvim ayı: 1 - ay sonu':'Mevcut dönem: '+periodLabel(new Date().getMonth(),new Date().getFullYear());
 }
-function updateDayPreview() {
-  const prev = document.getElementById('dayPreview');
-  if(!prev) return;
-  const now = new Date();
-  const lbl = periodLabel(now.getMonth(), now.getFullYear());
-  prev.textContent = startDay===1 ? 'Takvim ayı: 1 - ay sonu' : 'Mevcut dönem: '+lbl;
-}
-window.setStartDay = function(d) {
-  startDay = d;
-  saveStartDay();
-  renderDayGrid();
-  // curMonth'u yeniden hesapla
-  const now = new Date();
-  if(startDay>1 && now.getDate()<startDay) {
-    curMonth = now.getMonth()-1 < 0 ? 11 : now.getMonth()-1;
-    curYear = now.getMonth()-1 < 0 ? now.getFullYear()-1 : now.getFullYear();
-  } else {
-    curMonth = now.getMonth();
-    curYear = now.getFullYear();
-  }
-  refreshDashboard();
-  showToast('Başlangıç günü '+d+' olarak ayarlandı ✓');
+window.setStartDay=function(d){
+  startDay=d;saveStartDay();renderDayGrid();
+  const now=new Date();
+  if(startDay>1&&now.getDate()<startDay){curMonth=now.getMonth()-1<0?11:now.getMonth()-1;curYear=now.getMonth()-1<0?now.getFullYear()-1:now.getFullYear();}
+  else{curMonth=now.getMonth();curYear=now.getFullYear();}
+  refreshDashboard();showToast('Başlangıç günü '+d+' olarak ayarlandı ✓');
 };
 
-function showToast(msg){ const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2300); }
-
 function refreshDashboard(){
-  document.getElementById('monthLbl').textContent = periodLabel(curMonth, curYear);
-  const mt = monthTxs();
-  const income = mt.filter(t=>t.type==='income').reduce((a,t)=>a+t.amount,0);
-  const expense = mt.filter(t=>t.type==='expense').reduce((a,t)=>a+t.amount,0);
-  const bal = income-expense;
-  document.getElementById('balAmt').textContent = fmt(Math.abs(bal));
-  document.getElementById('totInc').textContent = '₺'+fmt(income);
-  document.getElementById('totExp').textContent = '₺'+fmt(expense);
-  const sub = document.getElementById('balSub');
-  if(income>0){
-    const pct=Math.round((expense/income)*100);
-    if(bal>=0){sub.innerHTML='Gelirinizin <b>%'+pct+'</b>\'ini harcadınız';sub.style.color='rgba(255,255,255,.75)';}
-    else{sub.innerHTML='⚠️ <b>₺'+fmt(Math.abs(bal))+'</b> bütçe aşımı!';sub.style.color='#ffe0e8';}
-  }else{sub.textContent='Bu ay henüz gelir girmediniz.';sub.style.color='rgba(255,255,255,.6)';}
+  document.getElementById('monthLbl').textContent=periodLabel(curMonth,curYear);
+  const mt=monthTxs();
+  const income=mt.filter(t=>t.type==='income').reduce((a,t)=>a+t.amount,0);
+  const expense=mt.filter(t=>t.type==='expense').reduce((a,t)=>a+t.amount,0);
+  const bal=income-expense;
+  document.getElementById('balAmt').textContent=fmt(Math.abs(bal));
+  document.getElementById('totInc').textContent='₺'+fmt(income);
+  document.getElementById('totExp').textContent='₺'+fmt(expense);
+  const sub=document.getElementById('balSub');
+  if(income>0){const pct=Math.round((expense/income)*100);if(bal>=0){sub.innerHTML='Gelirinizin <b>%'+pct+'</b>\'ini harcadınız';sub.style.color='rgba(255,255,255,.75)';}else{sub.innerHTML='⚠️ <b>₺'+fmt(Math.abs(bal))+'</b> bütçe aşımı!';sub.style.color='#ffe0e8';}}
+  else{sub.textContent='Bu ay henüz gelir girmediniz.';sub.style.color='rgba(255,255,255,.6)';}
   const totBgt=Object.values(budgets).reduce((a,b)=>a+b,0);
   const pb=document.getElementById('progBox');
-  if(totBgt>0){
-    pb.style.display='';
-    const pct=Math.min((expense/totBgt)*100,100);
-    const fill=document.getElementById('progFill');
-    fill.style.width=pct+'%';
-    fill.className='prog-fill '+(pct<70?'ok':pct<90?'warn':'over');
-    const pp=document.getElementById('progPct');
-    pp.textContent=Math.round(pct)+'%';
-    pp.style.color=pct<70?'var(--green)':pct<90?'var(--amber)':'var(--red)';
-  }else{pb.style.display='none';}
-  renderTxList(); renderMiniChart(); renderCats();
+  if(totBgt>0){pb.style.display='';const pct=Math.min((expense/totBgt)*100,100);const fill=document.getElementById('progFill');fill.style.width=pct+'%';fill.className='prog-fill '+(pct<70?'ok':pct<90?'warn':'over');const pp=document.getElementById('progPct');pp.textContent=Math.round(pct)+'%';pp.style.color=pct<70?'var(--green)':pct<90?'var(--amber)':'var(--red)';}
+  else pb.style.display='none';
+  renderTxList();renderMiniChart();renderCats();
 }
 
 function renderTxList(){
@@ -525,26 +505,13 @@ function renderTxList(){
   let html='';
   Object.keys(groups).sort((a,b)=>b.localeCompare(a)).forEach(dk=>{
     const d=new Date(dk+'T12:00:00');
-    let dlbl;
-    if(dk===today)dlbl='Bugün';
-    else if(dk===yesterday)dlbl='Dün';
-    else dlbl=d.toLocaleDateString('tr-TR',{day:'numeric',month:'long',weekday:'short'});
+    let dlbl=dk===today?'Bugün':dk===yesterday?'Dün':d.toLocaleDateString('tr-TR',{day:'numeric',month:'long',weekday:'short'});
     const dayTotal=groups[dk].reduce((a,t)=>t.type==='expense'?a-t.amount:a+t.amount,0);
     const dayColor=dayTotal>=0?'var(--green)':'var(--red)';
-    html+='<div style="display:flex;justify-content:space-between;align-items:center;padding:4px 2px 6px;margin-top:6px">'
-      +'<span style="font-size:11px;font-weight:800;color:var(--text3);text-transform:uppercase;letter-spacing:.06em">'+dlbl+'</span>'
-      +'<span style="font-size:12px;font-weight:800;color:'+dayColor+'">'+(dayTotal>=0?'+':'')+'₺'+fmt(Math.abs(dayTotal))+'</span>'
-      +'</div>';
+    html+='<div style="display:flex;justify-content:space-between;align-items:center;padding:4px 2px 6px;margin-top:6px"><span style="font-size:11px;font-weight:800;color:var(--text3);text-transform:uppercase;letter-spacing:.06em">'+dlbl+'</span><span style="font-size:12px;font-weight:800;color:'+dayColor+'">'+(dayTotal>=0?'+':'')+'₺'+fmt(Math.abs(dayTotal))+'</span></div>';
     groups[dk].forEach(t=>{
       const cat=getCat(t.category);
-      const sign=t.type==='income'?'+':'-';
-      const cls=t.type==='income'?'inc':'exp';
-      html+='<div class="tx-item">'
-        +'<div class="tx-icon" style="background:'+catBg(cat)+';border:1.5px solid '+catBr(cat)+'">'+cat.emoji+'</div>'
-        +'<div class="tx-info"><div class="tx-name">'+t.name+'</div><div class="tx-date">'+cat.name+'</div></div>'
-        +'<div class="tx-amt '+cls+'">'+sign+'₺'+fmt(t.amount)+'</div>'
-        +'<button class="tx-del" data-del="'+t.id+'">🗑</button>'
-        +'</div>';
+      html+='<div class="tx-item"><div class="tx-icon" style="background:'+catBg(cat)+';border:1.5px solid '+catBr(cat)+'">'+cat.emoji+'</div><div class="tx-info"><div class="tx-name">'+t.name+'</div><div class="tx-date">'+cat.name+'</div></div><div class="tx-amt '+(t.type==='income'?'inc':'exp')+'">'+(t.type==='income'?'+':'-')+'₺'+fmt(t.amount)+'</div><button class="tx-del" data-del="'+t.id+'">🗑</button></div>';
     });
   });
   list.innerHTML=html;
@@ -553,42 +520,25 @@ function renderTxList(){
 function renderMiniChart(){
   const bars=document.getElementById('miniBars');
   const tip=document.getElementById('barTip');
-  // Grafik her zaman bugünün takvim ayını baz alır (dönemden bağımsız)
-  const chartNow=new Date();
-  const chartMonth=chartNow.getMonth();
-  const chartYear=chartNow.getFullYear();
+  const cn=new Date(),cm=cn.getMonth(),cy2=cn.getFullYear();
   const months=[];
-  for(let i=5;i>=0;i--){let m=chartMonth-i,y=chartYear;if(m<0){m+=12;y--;}months.push({m,y,lbl:MONTHS[m].slice(0,3)});}
-  // Grafik her zaman takvim ayı bazlı (1-30/31)
-  function calMonthTxs(m,y){ return txs.filter(t=>{const d=new Date(t.date+'T12:00:00');return d.getMonth()===m&&d.getFullYear()===y;}); }
-  const maxV=Math.max(1,...months.map(({m,y})=>{
-    const t=calMonthTxs(m,y);
-    return Math.max(t.filter(t=>t.type==='income').reduce((a,t)=>a+t.amount,0),t.filter(t=>t.type==='expense').reduce((a,t)=>a+t.amount,0));
-  }));
+  for(let i=5;i>=0;i--){let m=cm-i,y=cy2;if(m<0){m+=12;y--;}months.push({m,y,lbl:MONTHS[m].slice(0,3)});}
+  const maxV=Math.max(1,...months.map(({m,y})=>{const t=calMonthTxs(m,y);return Math.max(t.filter(t=>t.type==='income').reduce((a,t)=>a+t.amount,0),t.filter(t=>t.type==='expense').reduce((a,t)=>a+t.amount,0));}));
   bars.innerHTML=months.map(({m,y,lbl})=>{
     const t=calMonthTxs(m,y);
     const inc=t.filter(t=>t.type==='income').reduce((a,t)=>a+t.amount,0);
     const exp=t.filter(t=>t.type==='expense').reduce((a,t)=>a+t.amount,0);
-    const ih=Math.round((inc/maxV)*70);
-    const eh=Math.round((exp/maxV)*70);
-    const isCur=(m===curMonth&&y===curYear);
+    const ih=Math.round((inc/maxV)*70),eh=Math.round((exp/maxV)*70);
+    const isCur=(m===cm&&y===cy2);
     const tipLbl=MONTHS[m]+' '+y+' (1-'+new Date(y,m+1,0).getDate()+')';
-    return '<div class="mbar-wrap" data-inc="'+inc+'" data-exp="'+exp+'" data-lbl="'+tipLbl+'">'
-      +'<div style="display:flex;gap:2px;align-items:flex-end;width:100%">'
-      +'<div class="mbar inc" style="height:'+ih+'px;flex:1;opacity:'+(isCur?1:0.65)+'"></div>'
-      +'<div class="mbar exp" style="height:'+eh+'px;flex:1;opacity:'+(isCur?1:0.65)+'"></div>'
-      +'</div><div class="mbar-lbl" style="'+(isCur?'color:var(--accent)':'')+'">'+lbl+(isCur?' ●':'')+'</div></div>';
+    return '<div class="mbar-wrap" data-inc="'+inc+'" data-exp="'+exp+'" data-lbl="'+tipLbl+'"><div style="display:flex;gap:2px;align-items:flex-end;width:100%"><div class="mbar inc" style="height:'+ih+'px;flex:1;opacity:'+(isCur?1:0.65)+'"></div><div class="mbar exp" style="height:'+eh+'px;flex:1;opacity:'+(isCur?1:0.65)+'"></div></div><div class="mbar-lbl" style="'+(isCur?'color:var(--accent)':'')+'">'+lbl+(isCur?' ●':'')+'</div></div>';
   }).join('');
   document.querySelectorAll('.mbar-wrap').forEach(el=>{
     el.addEventListener('click',function(e){
-      const inc=parseFloat(this.dataset.inc)||0;
-      const exp=parseFloat(this.dataset.exp)||0;
-      tip.innerHTML=this.dataset.lbl+'<br>💰 ₺'+fmt(inc)+'  💸 ₺'+fmt(exp);
+      tip.innerHTML=this.dataset.lbl+'<br>💰 ₺'+fmt(parseFloat(this.dataset.inc)||0)+'  💸 ₺'+fmt(parseFloat(this.dataset.exp)||0);
       tip.style.display='block';
-      const rect=this.getBoundingClientRect();
-      const pRect=document.querySelector('.mini-chart').getBoundingClientRect();
-      tip.style.left=(rect.left-pRect.left+rect.width/2)+'px';
-      tip.style.top=(rect.top-pRect.top-52)+'px';
+      const rect=this.getBoundingClientRect(),pRect=document.querySelector('.mini-chart').getBoundingClientRect();
+      tip.style.left=(rect.left-pRect.left+rect.width/2)+'px';tip.style.top=(rect.top-pRect.top-52)+'px';
       e.stopPropagation();
     });
   });
@@ -603,128 +553,153 @@ function renderCats(){
     const limit=budgets[c.id]||0;
     const pct=limit>0?Math.min((spent/limit)*100,100):0;
     const bc=pct<70?'var(--green)':pct<90?'var(--amber)':'var(--red)';
-    return '<div class="cat-item"><div class="cat-head">'
-      +'<div class="cat-ico">'+c.emoji+'</div>'
-      +'<div class="cat-nm">'+c.name+'</div>'
-      +'<div class="cat-amts"><div class="cat-spent" style="color:'+(spent>0?'var(--text)':'var(--text3)')+'">'+( spent>0?'₺'+fmt(spent):'—')+'</div>'
-      +'<div class="cat-lim">'+(limit>0?'Limit: ₺'+fmt(limit):'Limit yok')+'</div></div>'
-      +'</div>'+(limit>0?'<div class="cat-bar"><div class="cat-fill" style="width:'+pct+'%;background:'+bc+'"></div></div>':'')
-      +'</div>';
+    let h='<div class="cat-item"'+(spent>0?' style="cursor:pointer" onclick="showCatDetail(\''+c.id+'\',\'budget\')"':'')+' >';
+    h+='<div class="cat-head"><div class="cat-ico">'+c.emoji+'</div><div class="cat-nm">'+c.name+'</div>';
+    h+='<div class="cat-amts"><div class="cat-spent" style="color:'+(spent>0?'var(--text)':'var(--text3)')+'">'+( spent>0?'₺'+fmt(spent):'—')+'</div>';
+    h+='<div class="cat-lim">'+(limit>0?'Limit: ₺'+fmt(limit):'Limit yok')+'</div></div></div>';
+    if(limit>0)h+='<div class="cat-bar"><div class="cat-fill" style="width:'+pct+'%;background:'+bc+'"></div></div>';
+    if(spent>0)h+='<div style="text-align:right;font-size:11px;color:var(--accent);font-weight:700;margin-top:4px">Detaylar ›</div>';
+    h+='</div>';return h;
   }).join('');
 }
 
-function renderPie(){
-  const svg=document.getElementById('pieChart');
-  const leg=document.getElementById('pieLeg');
-  const clbl=document.getElementById('pieClbl');
-  if(!svg)return;
-  // Pasta grafik takvim ayı bazlı (1-30/31)
-  document.getElementById('pieMonthLbl').textContent = MONTHS[pieMonth]+' '+pieYear;
-  const mt=txs.filter(t=>{const d=new Date(t.date+'T12:00:00');return d.getMonth()===pieMonth&&d.getFullYear()===pieYear&&t.type===pieMode;});
-  const map={};
-  mt.forEach(t=>{map[t.category]=(map[t.category]||0)+t.amount;});
-  const total=Object.values(map).reduce((a,b)=>a+b,0);
-  if(total===0){
-    svg.innerHTML='';
-    leg.innerHTML='<div class="empty"><div>'+(pieMode==='expense'?'💸':'💰')+'</div><p>Bu ay '+(pieMode==='expense'?'gider':'gelir')+' kaydı yok</p></div>';
-    clbl.innerHTML='Veri yok<span>İşlem ekleyerek başla</span>';
-    return;
+window.showCatDetail=function(catId,source){
+  const cat=getCat(catId);
+  let mt;
+  if(source==='pie'){
+    mt=txs.filter(t=>{const d=new Date(t.date+'T12:00:00');return d.getMonth()===pieMonth&&d.getFullYear()===pieYear&&t.type===pieMode&&t.category===catId;});
+  }else{
+    mt=monthTxs().filter(t=>t.type==='expense'&&t.category===catId);
   }
+  if(!mt.length){showToast('Bu kategoride işlem yok');return;}
+  mt.sort((a,b)=>new Date(b.date)-new Date(a.date));
+  const total=mt.reduce((a,t)=>a+t.amount,0);
+  const color=source==='pie'&&pieMode==='income'?'var(--green)':'var(--red)';
+  document.getElementById('catDetailTitle').textContent=cat.emoji+' '+cat.name;
+  document.getElementById('catDetailPeriod').textContent=source==='pie'?MONTHS[pieMonth]+' '+pieYear+' (1-'+new Date(pieYear,pieMonth+1,0).getDate()+')':periodLabel(curMonth,curYear);
+  const tot=document.getElementById('catDetailTotal');tot.textContent='₺'+fmt(total);tot.style.color=color;
+  document.getElementById('catDetailList').innerHTML=mt.map(t=>{
+    const d=new Date(t.date+'T12:00:00');
+    return '<div class="cat-detail-item"><div style="flex:1"><div style="font-size:14px;font-weight:700;color:var(--text)">'+t.name+'</div><div class="cat-detail-date">'+d.toLocaleDateString('tr-TR',{day:'numeric',month:'long',weekday:'short'})+'</div></div><div style="font-size:15px;font-weight:800;color:'+color+'">₺'+fmt(t.amount)+'</div></div>';
+  }).join('');
+  document.getElementById('catDetailModal').classList.add('show');
+};
+
+function renderPie(){
+  const svg=document.getElementById('pieChart'),leg=document.getElementById('pieLeg'),clbl=document.getElementById('pieClbl');
+  if(!svg)return;
+  document.getElementById('pieMonthLbl').textContent=MONTHS[pieMonth]+' '+pieYear;
+  const mt=txs.filter(t=>{const d=new Date(t.date+'T12:00:00');return d.getMonth()===pieMonth&&d.getFullYear()===pieYear&&t.type===pieMode;});
+  const map={};mt.forEach(t=>{map[t.category]=(map[t.category]||0)+t.amount;});
+  const total=Object.values(map).reduce((a,b)=>a+b,0);
+  if(total===0){svg.innerHTML='';leg.innerHTML='<div class="empty"><div>'+(pieMode==='expense'?'💸':'💰')+'</div><p>Bu ay '+(pieMode==='expense'?'gider':'gelir')+' kaydı yok</p></div>';clbl.innerHTML='Veri yok<span>İşlem ekleyerek başla</span>';return;}
   const entries=Object.entries(map).map(([id,amt])=>({id,amt,cat:getCat(id)})).sort((a,b)=>b.amt-a.amt);
-  const cx=110,cy=110,R=88,ri=52;
-  let ang=-Math.PI/2;
+  const cx=110,cy=110,R=88,ri=52;let ang=-Math.PI/2;
   const slices=entries.map((e,i)=>{const sw=(e.amt/total)*2*Math.PI;const s={...e,a0:ang,a1:ang+sw,color:PIE_COLORS[i%PIE_COLORS.length]};ang+=sw;return s;});
   function pt(a,r){return{x:cx+r*Math.cos(a),y:cy+r*Math.sin(a)};}
-  function mkPath(s,exp){
-    exp=exp||0;const mid=(s.a0+s.a1)/2;const dx=exp*Math.cos(mid),dy=exp*Math.sin(mid);
-    const p1=pt(s.a0,R),p2=pt(s.a1,R),p3=pt(s.a1,ri),p4=pt(s.a0,ri);
-    const lg=(s.a1-s.a0)>Math.PI?1:0;
-    return 'M'+(p1.x+dx)+' '+(p1.y+dy)+' A'+R+' '+R+' 0 '+lg+' 1 '+(p2.x+dx)+' '+(p2.y+dy)+' L'+(p3.x+dx)+' '+(p3.y+dy)+' A'+ri+' '+ri+' 0 '+lg+' 0 '+(p4.x+dx)+' '+(p4.y+dy)+'Z';
-  }
+  function mkPath(s,exp){exp=exp||0;const mid=(s.a0+s.a1)/2,dx=exp*Math.cos(mid),dy=exp*Math.sin(mid);const p1=pt(s.a0,R),p2=pt(s.a1,R),p3=pt(s.a1,ri),p4=pt(s.a0,ri);const lg=(s.a1-s.a0)>Math.PI?1:0;return 'M'+(p1.x+dx)+' '+(p1.y+dy)+' A'+R+' '+R+' 0 '+lg+' 1 '+(p2.x+dx)+' '+(p2.y+dy)+' L'+(p3.x+dx)+' '+(p3.y+dy)+' A'+ri+' '+ri+' 0 '+lg+' 0 '+(p4.x+dx)+' '+(p4.y+dy)+'Z';}
   let h='<defs><filter id="sf"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="rgba(5,80,60,.2)"/></filter></defs>';
-  slices.forEach((s,i)=>{
-    const sel=selSlice===i;
-    h+='<path d="'+mkPath(s,sel?8:0)+'" fill="'+s.color+'" stroke="#fff" stroke-width="2.5" style="cursor:pointer;transition:all .2s;filter:'+(sel?'url(#sf)':'none')+';opacity:'+(selSlice!==null&&!sel?0.5:1)+'" data-idx="'+i+'"></path>';
-  });
+  slices.forEach((s,i)=>{const sel=selSlice===i;h+='<path d="'+mkPath(s,sel?8:0)+'" fill="'+s.color+'" stroke="#fff" stroke-width="2.5" style="cursor:pointer;transition:all .2s;filter:'+(sel?'url(#sf)':'none')+';opacity:'+(selSlice!==null&&!sel?0.5:1)+'" data-idx="'+i+'"></path>';});
   h+='<circle cx="'+cx+'" cy="'+cy+'" r="'+(ri-2)+'" fill="white" opacity="0.95"/>';
-  if(selSlice!==null&&slices[selSlice]){
-    const s=slices[selSlice];const pct=Math.round((s.amt/total)*100);const nm=s.cat.name.split(' ')[0];
-    h+='<text x="'+cx+'" y="'+(cy-11)+'" text-anchor="middle" font-family="Nunito" font-size="12" font-weight="800" fill="#0d3b30">'+s.cat.emoji+' '+nm+'</text>'
-      +'<text x="'+cx+'" y="'+(cy+11)+'" text-anchor="middle" font-family="Nunito" font-size="20" font-weight="800" fill="'+s.color+'">%'+pct+'</text>'
-      +'<text x="'+cx+'" y="'+(cy+28)+'" text-anchor="middle" font-family="Nunito" font-size="11" font-weight="700" fill="#7ec4b0">₺'+fmt(s.amt)+'</text>';
-  }else{
-    h+='<text x="'+cx+'" y="'+(cy-4)+'" text-anchor="middle" font-family="Nunito" font-size="11" font-weight="700" fill="#7ec4b0">TOPLAM</text>'
-      +'<text x="'+cx+'" y="'+(cy+16)+'" text-anchor="middle" font-family="Nunito" font-size="14" font-weight="800" fill="#0d3b30">₺'+fmt(total)+'</text>';
-  }
+  if(selSlice!==null&&slices[selSlice]){const s=slices[selSlice];const pct=Math.round((s.amt/total)*100);h+='<text x="'+cx+'" y="'+(cy-11)+'" text-anchor="middle" font-family="Nunito" font-size="12" font-weight="800" fill="#0d3b30">'+s.cat.emoji+' '+s.cat.name.split(' ')[0]+'</text><text x="'+cx+'" y="'+(cy+11)+'" text-anchor="middle" font-family="Nunito" font-size="20" font-weight="800" fill="'+s.color+'">%'+pct+'</text><text x="'+cx+'" y="'+(cy+28)+'" text-anchor="middle" font-family="Nunito" font-size="11" font-weight="700" fill="#7ec4b0">₺'+fmt(s.amt)+'</text>';}
+  else{h+='<text x="'+cx+'" y="'+(cy-4)+'" text-anchor="middle" font-family="Nunito" font-size="11" font-weight="700" fill="#7ec4b0">TOPLAM</text><text x="'+cx+'" y="'+(cy+16)+'" text-anchor="middle" font-family="Nunito" font-size="14" font-weight="800" fill="#0d3b30">₺'+fmt(total)+'</text>';}
   svg.innerHTML=h;
-  leg.innerHTML=slices.map((s,i)=>{
-    const pct=Math.round((s.amt/total)*100);const sel=selSlice===i;
-    return '<div class="plit" data-idx="'+i+'" style="'+(sel?'border-color:'+s.color+';box-shadow:0 4px 0 '+s.color+'55':'')+'">'
-      +'<div class="pl-dot" style="background:'+s.color+'"></div>'
-      +'<div class="pl-nm">'+s.cat.emoji+' '+s.cat.name+'</div>'
-      +'<div class="pl-pct">%'+pct+'</div>'
-      +'<div class="pl-amt" style="color:'+s.color+'">₺'+fmt(s.amt)+'</div></div>';
-  }).join('');
-  const sel2=selSlice!==null&&slices[selSlice];
-  clbl.innerHTML=sel2?sel2.cat.emoji+' '+sel2.cat.name+'<span>₺'+fmt(sel2.amt)+' · %'+Math.round((sel2.amt/total)*100)+'</span>':entries.length+' kategori<span>Dilime tıkla → detay</span>';
+  leg.innerHTML=slices.map((s,i)=>{const pct=Math.round((s.amt/total)*100);const sel=selSlice===i;return '<div class="plit" data-idx="'+i+'" style="'+(sel?'border-color:'+s.color+';box-shadow:0 4px 0 '+s.color+'55':'')+'"><div class="pl-dot" style="background:'+s.color+'"></div><div class="pl-nm">'+s.cat.emoji+' '+s.cat.name+'</div><div class="pl-pct">%'+pct+'</div><div class="pl-amt" style="color:'+s.color+'">₺'+fmt(s.amt)+'</div><div style="font-size:13px;color:var(--accent);font-weight:800;padding:0 2px;cursor:pointer" onclick="showCatDetail(\''+s.cat.id+'\',\'pie\');event.stopPropagation()">›</div></div>';}).join('');
+  const sel2=selSlice!==null&&slices[selSlice];clbl.innerHTML=sel2?sel2.cat.emoji+' '+sel2.cat.name+'<span>₺'+fmt(sel2.amt)+' · %'+Math.round((sel2.amt/total)*100)+'</span>':entries.length+' kategori<span>Dilime tıkla → detay</span>';
 }
 
 function renderRapor(){
   document.getElementById('rYearLbl').textContent=raporYear;
-  const yt=txs.filter(t=>new Date(t.date).getFullYear()===raporYear);
+  const yt=txs.filter(t=>new Date(t.date+'T12:00:00').getFullYear()===raporYear);
   const yInc=yt.filter(t=>t.type==='income').reduce((a,t)=>a+t.amount,0);
   const yExp=yt.filter(t=>t.type==='expense').reduce((a,t)=>a+t.amount,0);
   const yBal=yInc-yExp;
   document.getElementById('rTotInc').textContent='₺'+fmt(yInc);
   document.getElementById('rTotExp').textContent='₺'+fmt(yExp);
-  const be=document.getElementById('rTotBal');
-  be.textContent=(yBal>=0?'+':'')+'₺'+fmt(Math.abs(yBal));
-  be.style.color=yBal>=0?'var(--green)':'var(--red)';
+  const be=document.getElementById('rTotBal');be.textContent=(yBal>=0?'+':'')+'₺'+fmt(Math.abs(yBal));be.style.color=yBal>=0?'var(--green)':'var(--red)';
+  // En çok harcanan kategoriler
   const expCats=CATS.filter(c=>!isIncCat(c));
   const catTotals=expCats.map(c=>({cat:c,amt:yt.filter(t=>t.type==='expense'&&t.category===c.id).reduce((a,t)=>a+t.amount,0)})).filter(x=>x.amt>0).sort((a,b)=>b.amt-a.amt).slice(0,4);
   const bestEl=document.getElementById('rBestCat');
   if(catTotals.length){
-    bestEl.innerHTML='<div class="rapor-best-title">🏆 En Çok Harcanan</div>'
-      +catTotals.map((x,i)=>{
-        const medals=['🥇','🥈','🥉','4️⃣'];
-        const pct=yExp>0?Math.round((x.amt/yExp)*100):0;
-        return '<div class="rapor-best-row">'
-          +'<div class="rapor-best-ico">'+medals[i]+'</div>'
-          +'<div class="rapor-best-info"><div class="rapor-best-nm">'+x.cat.emoji+' '+x.cat.name+'</div>'
-          +'<div class="rapor-best-sub">Toplam giderin %'+pct+'si</div></div>'
-          +'<div class="rapor-best-amt" style="color:var(--red)">₺'+fmt(x.amt)+'</div></div>';
-      }).join('');
+    const medals=['🥇','🥈','🥉','4️⃣'];
+    bestEl.innerHTML='<div class="rapor-best-title">🏆 En Çok Harcanan</div>'+catTotals.map((x,i)=>{
+      const pct=yExp>0?Math.round((x.amt/yExp)*100):0;
+      return '<div class="rapor-best-row"><div class="rapor-best-ico">'+medals[i]+'</div><div class="rapor-best-info"><div class="rapor-best-nm">'+x.cat.emoji+' '+x.cat.name+'</div><div class="rapor-best-sub">Toplam giderin %'+pct+'si</div></div><div class="rapor-best-amt" style="color:var(--red)">₺'+fmt(x.amt)+'</div></div>';
+    }).join('');
     bestEl.style.display='';
-  }else{bestEl.style.display='none';}
-  const maxV=Math.max(1,...Array.from({length:12},(_,m)=>{
-    const t=yt.filter(t=>new Date(t.date).getMonth()===m);
-    return Math.max(t.filter(t=>t.type==='income').reduce((a,t)=>a+t.amount,0),t.filter(t=>t.type==='expense').reduce((a,t)=>a+t.amount,0));
-  }));
+  }else bestEl.style.display='none';
+  // Aylık verileri hesapla
   const now=new Date();
-  document.getElementById('rMonths').innerHTML=Array.from({length:12},(_,m)=>{
-    const mTxs=yt.filter(t=>new Date(t.date).getMonth()===m);
+  const monthData=Array.from({length:12},(_,m)=>{
+    const mTxs=yt.filter(t=>new Date(t.date+'T12:00:00').getMonth()===m);
     const inc=mTxs.filter(t=>t.type==='income').reduce((a,t)=>a+t.amount,0);
     const exp=mTxs.filter(t=>t.type==='expense').reduce((a,t)=>a+t.amount,0);
-    const bal=inc-exp;
-    const isCur=m===curMonth&&raporYear===curYear;
+    return{m,inc,exp,bal:inc-exp,has:inc>0||exp>0};
+  });
+  const dataMonths=monthData.filter(d=>d.has);
+  const bestM=dataMonths.length?dataMonths.reduce((a,b)=>b.bal>a.bal?b:a):null;
+  const worstM=dataMonths.length?dataMonths.reduce((a,b)=>b.bal<a.bal?b:a):null;
+  const savePct=yInc>0?Math.round((yBal/yInc)*100):null;
+  // Highlight
+  const hl=document.getElementById('rHighlight');
+  if(dataMonths.length){
+    hl.style.display='';
+    let hlHtml='';
+    if(bestM)hlHtml+='<div class="rapor-hl-card"><div class="rapor-hl-ico">🌟</div><div class="rapor-hl-lbl">En İyi Ay</div><div class="rapor-hl-val" style="color:var(--green)">'+MONTHS[bestM.m]+'</div><div class="rapor-hl-sub">'+(bestM.bal>=0?'+':'')+'₺'+fmt(bestM.bal)+'</div></div>';
+    if(worstM&&(!bestM||worstM.m!==bestM.m))hlHtml+='<div class="rapor-hl-card"><div class="rapor-hl-ico">📉</div><div class="rapor-hl-lbl">En Zor Ay</div><div class="rapor-hl-val" style="color:var(--red)">'+MONTHS[worstM.m]+'</div><div class="rapor-hl-sub">'+(worstM.bal>=0?'+':'')+'₺'+fmt(worstM.bal)+'</div></div>';
+    if(savePct!==null)hlHtml+='<div class="rapor-hl-card"><div class="rapor-hl-ico">💰</div><div class="rapor-hl-lbl">Tasarruf Oranı</div><div class="rapor-hl-val" style="color:'+(savePct>=0?'var(--accent)':'var(--red)')+'">%'+savePct+'</div><div class="rapor-hl-sub">₺'+fmt(Math.abs(yBal))+'</div></div>';
+    hlHtml+='<div class="rapor-hl-card"><div class="rapor-hl-ico">📅</div><div class="rapor-hl-lbl">Aktif Ay</div><div class="rapor-hl-val" style="color:var(--accent)">'+dataMonths.length+'</div><div class="rapor-hl-sub">kayıtlı</div></div>';
+    hl.innerHTML=hlHtml;
+  }else hl.style.display='none';
+  // 2li grid aylık özet
+  document.getElementById('rMonths').innerHTML=monthData.map(({m,inc,exp,bal,has})=>{
+    const isCur=m===now.getMonth()&&raporYear===now.getFullYear();
     const isFuture=raporYear>now.getFullYear()||(raporYear===now.getFullYear()&&m>now.getMonth());
-    if(isFuture&&inc===0&&exp===0)return '';
+    if(isFuture&&!has)return '';
+    const isBest=bestM&&bestM.m===m&&has;
+    const isWorst=worstM&&worstM.m===m&&has&&!(bestM&&bestM.m===m);
     const badgeCls=bal>0?'pos':bal<0?'neg':'zero';
-    const badgeTxt=bal>0?'+₺'+fmt(bal):bal<0?'-₺'+fmt(Math.abs(bal)):'Veri yok';
-    const incW=Math.round((inc/maxV)*100);
-    const expW=Math.round((exp/maxV)*100);
-    return '<div class="rapor-mrow'+(isCur?' cur-month':'')+'" onclick="goToMonth('+m+','+raporYear+')">'
-      +'<div class="rapor-mhead"><div class="rapor-mname">'+(isCur?'📍 ':'')+MONTHS[m]+'</div>'
-      +'<div class="rapor-mbadge '+badgeCls+'">'+badgeTxt+'</div></div>'
-      +(inc>0||exp>0?
-        '<div class="rapor-mbars">'
-        +'<div class="rapor-mbar-row"><div class="rapor-mbar-lbl">💰</div><div class="rapor-mbar-track"><div class="rapor-mbar-fill inc" style="width:'+incW+'%"></div></div><div class="rapor-mbar-amt inc">₺'+fmt(inc)+'</div></div>'
-        +'<div class="rapor-mbar-row"><div class="rapor-mbar-lbl">💸</div><div class="rapor-mbar-track"><div class="rapor-mbar-fill exp" style="width:'+expW+'%"></div></div><div class="rapor-mbar-amt exp">₺'+fmt(exp)+'</div></div>'
-        +'</div>'
-        :'<div style="font-size:12px;color:var(--text3);font-weight:600">Kayıt yok</div>')
-      +'</div>';
+    const savPct=inc>0?Math.round((bal/inc)*100):null;
+    let cls='rapor-mgrid-item';
+    if(isCur)cls+=' cur-m';else if(isBest)cls+=' best-m';else if(isWorst)cls+=' worst-m';
+    let h='<div class="'+cls+'" onclick="showRaporMonth('+m+')">';
+    h+='<div class="rm-flag">'+(isCur?'📍':isBest?'⭐':isWorst?'🔴':'')+'</div>';
+    h+='<div class="rm-name">'+MONTHS[m]+'</div>';
+    h+='<div class="rm-badge '+badgeCls+'">'+(bal>0?'+':'')+'₺'+fmt(Math.abs(bal))+'</div>';
+    if(has){h+='<div class="rm-row"><span style="color:var(--green)">₺'+fmt(inc)+'</span><span style="color:var(--red)">₺'+fmt(exp)+'</span></div>';if(savPct!==null)h+='<div class="rm-save">Tasarruf: %'+savPct+'</div>';}
+    else h+='<div class="rm-empty">Kayıt yok</div>';
+    h+='</div>';return h;
   }).join('');
 }
+
+window.showRaporMonth=function(m){
+  const mTxs=txs.filter(t=>{const d=new Date(t.date+'T12:00:00');return d.getFullYear()===raporYear&&d.getMonth()===m;});
+  const inc=mTxs.filter(t=>t.type==='income').reduce((a,t)=>a+t.amount,0);
+  const exp=mTxs.filter(t=>t.type==='expense').reduce((a,t)=>a+t.amount,0);
+  const bal=inc-exp;
+  const lastDay=new Date(raporYear,m+1,0).getDate();
+  document.getElementById('rmdTitle').textContent=MONTHS[m]+' '+raporYear+' (1-'+lastDay+')';
+  document.getElementById('rmdSum').innerHTML='<div style="font-size:13px;font-weight:700;color:var(--text2)">💰 ₺'+fmt(inc)+'<br>💸 ₺'+fmt(exp)+'</div><div style="font-size:20px;font-weight:800;color:'+(bal>=0?'var(--green)':'var(--red)')+'">'+(bal>=0?'+':'')+'₺'+fmt(Math.abs(bal))+'</div>';
+  const expCats=CATS.filter(c=>!isIncCat(c));
+  const catRows=expCats.map(c=>{const ct=mTxs.filter(t=>t.type==='expense'&&t.category===c.id).sort((a,b)=>new Date(b.date)-new Date(a.date));return{cat:c,txs:ct,total:ct.reduce((a,t)=>a+t.amount,0)};}).filter(r=>r.total>0).sort((a,b)=>b.total-a.total);
+  const incTxs=mTxs.filter(t=>t.type==='income').sort((a,b)=>new Date(b.date)-new Date(a.date));
+  let html='';
+  if(incTxs.length){
+    html+='<div class="flbl" style="margin:0 0 8px">💰 Gelirler</div>';
+    html+=incTxs.map(t=>{const d=new Date(t.date+'T12:00:00');return '<div class="rmd-item"><div style="flex:1"><div style="font-size:14px;font-weight:700">'+t.name+'</div><div style="font-size:11px;color:var(--text3);font-weight:700">'+d.toLocaleDateString('tr-TR',{day:'numeric',month:'short'})+'</div></div><div style="font-size:14px;font-weight:800;color:var(--green)">+₺'+fmt(t.amount)+'</div></div>';}).join('');
+  }
+  if(catRows.length){
+    html+='<div class="flbl" style="margin:'+(incTxs.length?'14px':'0')+' 0 8px">💸 Giderler</div>';
+    catRows.forEach(r=>{
+      html+='<div class="rmd-cat-hdr"><span style="font-size:13px;font-weight:800;color:var(--text2)">'+r.cat.emoji+' '+r.cat.name+'</span><span style="font-size:13px;font-weight:800;color:var(--red)">₺'+fmt(r.total)+'</span></div>';
+      html+=r.txs.map(t=>{const d=new Date(t.date+'T12:00:00');return '<div class="rmd-item" style="margin-left:8px"><div style="flex:1"><div style="font-size:13px;font-weight:700">'+t.name+'</div><div style="font-size:11px;color:var(--text3);font-weight:700">'+d.toLocaleDateString('tr-TR',{day:'numeric',month:'short'})+'</div></div><div style="font-size:13px;font-weight:800;color:var(--red)">₺'+fmt(t.amount)+'</div></div>';}).join('');
+    });
+  }
+  if(!html)html='<div class="empty"><div>🧾</div><p>Bu ay kayıt yok</p></div>';
+  document.getElementById('rmdBody').innerHTML=html;
+  document.getElementById('raporMonthModal').classList.add('show');
+};
 
 function goToMonth(m,y){
   curMonth=m;curYear=y;refreshDashboard();
@@ -743,77 +718,37 @@ function setType(t){
   document.getElementById('txCat').innerHTML=cats.map(c=>'<option value="'+c.id+'">'+c.emoji+' '+c.name+'</option>').join('');
 }
 
-// Category modal
 function renderCatModal(){
   const custom=CATS.filter(c=>!DEFAULT_CATS.find(d=>d.id===c.id));
   const el=document.getElementById('catModalList');
   if(!custom.length){el.innerHTML='<div style="font-size:13px;color:var(--text3);font-weight:600;text-align:center;padding:8px 0">Henüz özel kategori yok</div>';return;}
-  el.innerHTML='<div class="flbl">Özel Kategoriler</div>'+custom.map(c=>'<div class="cat-modal-item">'
-    +'<div class="cat-modal-emoji">'+c.emoji+'</div>'
-    +'<div class="cat-modal-name">'+c.name+'</div>'
-    +'<div class="cat-modal-type '+(isIncCat(c)?'inc':'exp')+'">'+(isIncCat(c)?'Gelir':'Gider')+'</div>'
-    +'<button class="cat-del-btn" onclick="deleteCat(\''+c.id+'\')">🗑</button>'
-    +'</div>').join('');
+  el.innerHTML='<div class="flbl">Özel Kategoriler</div>'+custom.map(c=>'<div class="cat-modal-item"><div class="cat-modal-emoji">'+c.emoji+'</div><div class="cat-modal-name">'+c.name+'</div><div class="cat-modal-type '+(isIncCat(c)?'inc':'exp')+'">'+(isIncCat(c)?'Gelir':'Gider')+'</div><button class="cat-del-btn" onclick="deleteCat(\''+c.id+'\')">🗑</button></div>').join('');
 }
-window.deleteCat=function(id){
-  CATS=CATS.filter(c=>c.id!==id);
-  saveCats();renderCatModal();refreshDashboard();showToast('Kategori silindi 🗑');
-};
+window.deleteCat=function(id){CATS=CATS.filter(c=>c.id!==id);saveCats();renderCatModal();refreshDashboard();showToast('Kategori silindi 🗑');};
 
-// Emoji picker
 const emojiGrid=document.getElementById('emojiGrid');
 emojiGrid.innerHTML=EMOJIS.map(e=>'<span style="font-size:24px;cursor:pointer;padding:4px;border-radius:6px" onclick="pickEmoji(\''+e+'\')">'+e+'</span>').join('');
-document.getElementById('emojiPicker').addEventListener('click',()=>{
-  emojiGrid.style.display=emojiGrid.style.display==='flex'?'none':'flex';
-});
-window.pickEmoji=function(e){
-  selEmoji=e;
-  document.getElementById('emojiPicker').textContent=e;
-  emojiGrid.style.display='none';
-};
-
-document.getElementById('newCatExpBtn').addEventListener('click',()=>{
-  newCatIsIncome=false;
-  document.getElementById('newCatExpBtn').className='typbtn active exp';
-  document.getElementById('newCatIncBtn').className='typbtn inc';
-});
-document.getElementById('newCatIncBtn').addEventListener('click',()=>{
-  newCatIsIncome=true;
-  document.getElementById('newCatIncBtn').className='typbtn active inc';
-  document.getElementById('newCatExpBtn').className='typbtn exp';
-});
+document.getElementById('emojiPicker').addEventListener('click',()=>{emojiGrid.style.display=emojiGrid.style.display==='flex'?'none':'flex';});
+window.pickEmoji=function(e){selEmoji=e;document.getElementById('emojiPicker').textContent=e;emojiGrid.style.display='none';};
+document.getElementById('newCatExpBtn').addEventListener('click',()=>{newCatIsIncome=false;document.getElementById('newCatExpBtn').className='typbtn active exp';document.getElementById('newCatIncBtn').className='typbtn inc';});
+document.getElementById('newCatIncBtn').addEventListener('click',()=>{newCatIsIncome=true;document.getElementById('newCatIncBtn').className='typbtn active inc';document.getElementById('newCatExpBtn').className='typbtn exp';});
 document.getElementById('addCatBtn').addEventListener('click',()=>{
   const name=document.getElementById('catNameInp').value.trim();
   if(!name){showToast('Kategori adı girin ⚠️');return;}
-  const id='c_'+Date.now();
-  CATS.push({id,name,emoji:selEmoji,isIncome:newCatIsIncome});
-  saveCats();
-  document.getElementById('catNameInp').value='';
-  selEmoji='😀';
-  document.getElementById('emojiPicker').textContent='😀';
-  renderCatModal();refreshDashboard();
-  showToast(name+' kategorisi eklendi ✓');
+  CATS.push({id:'c_'+Date.now(),name,emoji:selEmoji,isIncome:newCatIsIncome});
+  saveCats();document.getElementById('catNameInp').value='';selEmoji='😀';document.getElementById('emojiPicker').textContent='😀';
+  renderCatModal();refreshDashboard();showToast(name+' kategorisi eklendi ✓');
 });
 document.getElementById('editCatBtn').addEventListener('click',()=>{
-  selEmoji='😀';
-  document.getElementById('emojiPicker').textContent='😀';
-  document.getElementById('catNameInp').value='';
-  emojiGrid.style.display='none';
-  newCatIsIncome=false;
-  document.getElementById('newCatExpBtn').className='typbtn active exp';
-  document.getElementById('newCatIncBtn').className='typbtn inc';
-  renderCatModal();
-  document.getElementById('catModal').classList.add('show');
+  selEmoji='😀';document.getElementById('emojiPicker').textContent='😀';document.getElementById('catNameInp').value='';
+  emojiGrid.style.display='none';newCatIsIncome=false;
+  document.getElementById('newCatExpBtn').className='typbtn active exp';document.getElementById('newCatIncBtn').className='typbtn inc';
+  renderCatModal();document.getElementById('catModal').classList.add('show');
 });
-
-// Events
 document.getElementById('monthBtn').addEventListener('click',()=>{
-  curMonth++;
-  if(curMonth>11){curMonth=0;curYear++;}
-  const now=new Date();
-  const maxMonth = startDay>1&&now.getDate()<startDay ? now.getMonth()-1 : now.getMonth();
-  const adjMax = maxMonth<0?11:maxMonth;
-  const adjYear = maxMonth<0?now.getFullYear()-1:now.getFullYear();
+  curMonth++;if(curMonth>11){curMonth=0;curYear++;}
+  const now=new Date(),maxMonth=startDay>1&&now.getDate()<startDay?now.getMonth()-1:now.getMonth();
+  const adjMax=maxMonth<0?11:maxMonth,adjYear=maxMonth<0?now.getFullYear()-1:now.getFullYear();
   if(curYear>adjYear||(curYear===adjYear&&curMonth>adjMax)){curMonth=adjMax;curYear=adjYear;}
   refreshDashboard();
   if(document.getElementById('page-chart').classList.contains('active'))renderPie();
@@ -825,41 +760,24 @@ document.querySelectorAll('.nitem').forEach(el=>{
     document.getElementById('page-'+pg).classList.add('active');
     document.querySelectorAll('.nitem').forEach(n=>n.classList.remove('active'));
     el.classList.add('active');
+    document.getElementById('monthBtn').style.display=(pg==='dashboard'||pg==='budget')?'':'none';
     if(pg==='chart'){selSlice=null;pieMonth=new Date().getMonth();pieYear=new Date().getFullYear();renderPie();}
     if(pg==='rapor'){raporYear=curYear;renderRapor();}
-    if(pg==='ayarlar'){renderDayGrid();}
+    if(pg==='ayarlar')renderDayGrid();
   });
 });
-document.querySelectorAll('.tab').forEach(el=>{
-  el.addEventListener('click',()=>{
-    curFilter=el.dataset.filter;
-    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-    el.classList.add('active');renderTxList();
-  });
-});
+document.querySelectorAll('.tab').forEach(el=>{el.addEventListener('click',()=>{curFilter=el.dataset.filter;document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));el.classList.add('active');renderTxList();});});
 document.getElementById('pieExpBtn').addEventListener('click',()=>{pieMode='expense';selSlice=null;document.getElementById('pieExpBtn').classList.add('active');document.getElementById('pieIncBtn').classList.remove('active');renderPie();});
 document.getElementById('pieIncBtn').addEventListener('click',()=>{pieMode='income';selSlice=null;document.getElementById('pieIncBtn').classList.add('active');document.getElementById('pieExpBtn').classList.remove('active');renderPie();});
-document.getElementById('pieMonthPrev').addEventListener('click',()=>{
-  pieMonth--; if(pieMonth<0){pieMonth=11;pieYear--;} selSlice=null; renderPie();
-});
+document.getElementById('pieMonthPrev').addEventListener('click',()=>{pieMonth--;if(pieMonth<0){pieMonth=11;pieYear--;}selSlice=null;renderPie();});
 document.getElementById('pieMonthNext').addEventListener('click',()=>{
-  const now=new Date();
-  pieMonth++; if(pieMonth>11){pieMonth=0;pieYear++;}
-  if(pieYear>now.getFullYear()||(pieYear===now.getFullYear()&&pieMonth>now.getMonth())){
-    pieMonth=now.getMonth(); pieYear=now.getFullYear();
-    showToast('Gelecek ay verisi yok 😄'); return;
-  }
-  selSlice=null; renderPie();
+  const now=new Date();pieMonth++;if(pieMonth>11){pieMonth=0;pieYear++;}
+  if(pieYear>now.getFullYear()||(pieYear===now.getFullYear()&&pieMonth>now.getMonth())){pieMonth=now.getMonth();pieYear=now.getFullYear();showToast('Gelecek ay verisi yok 😄');return;}
+  selSlice=null;renderPie();
 });
 document.getElementById('pieChart').addEventListener('click',e=>{const p=e.target.closest('path');if(!p)return;const idx=parseInt(p.dataset.idx);if(isNaN(idx))return;selSlice=selSlice===idx?null:idx;renderPie();});
 document.getElementById('pieLeg').addEventListener('click',e=>{const it=e.target.closest('.plit');if(!it)return;const idx=parseInt(it.dataset.idx);selSlice=selSlice===idx?null:idx;renderPie();});
-document.getElementById('addBtn').addEventListener('click',()=>{
-  document.getElementById('txAmt').value='';
-  document.getElementById('txName').value='';
-  document.getElementById('txDate').value=new Date().toISOString().split('T')[0];
-  setType('expense');
-  document.getElementById('addModal').classList.add('show');
-});
+document.getElementById('addBtn').addEventListener('click',()=>{document.getElementById('txAmt').value='';document.getElementById('txName').value='';document.getElementById('txDate').value=new Date().toISOString().split('T')[0];setType('expense');document.getElementById('addModal').classList.add('show');});
 document.getElementById('btnExp').addEventListener('click',()=>setType('expense'));
 document.getElementById('btnInc').addEventListener('click',()=>setType('income'));
 document.getElementById('saveTxBtn').addEventListener('click',()=>{
@@ -870,128 +788,50 @@ document.getElementById('saveTxBtn').addEventListener('click',()=>{
   if(!amt||amt<=0){showToast('Geçerli bir tutar girin ⚠️');return;}
   if(!date){showToast('Tarih seçin ⚠️');return;}
   txs.push({id:Date.now().toString(),type:curType,amount:amt,name:name||getCat(cat).name,category:cat,date:date});
-  save();
-  document.getElementById('addModal').classList.remove('show');
-  refreshDashboard();
+  save();document.getElementById('addModal').classList.remove('show');refreshDashboard();
   showToast((curType==='income'?'💰 Gelir':'💸 Gider')+' eklendi!');
 });
-document.getElementById('txList').addEventListener('click',e=>{
-  const btn=e.target.closest('[data-del]');
-  if(!btn)return;
-  e.stopPropagation();
-  txs=txs.filter(t=>t.id!==btn.dataset.del);
-  save();refreshDashboard();showToast('İşlem silindi 🗑');
-});
+document.getElementById('txList').addEventListener('click',e=>{const btn=e.target.closest('[data-del]');if(!btn)return;e.stopPropagation();txs=txs.filter(t=>t.id!==btn.dataset.del);save();refreshDashboard();showToast('İşlem silindi 🗑');});
 document.getElementById('editBgtBtn').addEventListener('click',()=>{
   const expCats=CATS.filter(c=>!isIncCat(c));
-  document.getElementById('bgtInputs').innerHTML=expCats.map(c=>'<div class="bgt-row"><label>'+c.emoji+' '+c.name+'</label>'
-    +'<input type="number" id="bg_'+c.id+'" value="'+(budgets[c.id]||'')+'" placeholder="₺ limit" min="0" step="100" inputmode="decimal"></div>').join('');
+  document.getElementById('bgtInputs').innerHTML=expCats.map(c=>'<div class="bgt-row"><label>'+c.emoji+' '+c.name+'</label><input type="number" id="bg_'+c.id+'" value="'+(budgets[c.id]||'')+'" placeholder="₺ limit" min="0" step="100" inputmode="decimal"></div>').join('');
   document.getElementById('bgtModal').classList.add('show');
 });
 document.getElementById('saveBgtBtn').addEventListener('click',()=>{
-  CATS.filter(c=>!isIncCat(c)).forEach(c=>{
-    const v=parseFloat(document.getElementById('bg_'+c.id).value);
-    if(v>0)budgets[c.id]=v;else delete budgets[c.id];
-  });
-  save();
-  document.getElementById('bgtModal').classList.remove('show');
-  refreshDashboard();showToast('Bütçeler kaydedildi ✓');
+  CATS.filter(c=>!isIncCat(c)).forEach(c=>{const v=parseFloat(document.getElementById('bg_'+c.id).value);if(v>0)budgets[c.id]=v;else delete budgets[c.id];});
+  save();document.getElementById('bgtModal').classList.remove('show');refreshDashboard();showToast('Bütçeler kaydedildi ✓');
 });
 document.getElementById('rYearPrev').addEventListener('click',()=>{raporYear--;renderRapor();});
-document.getElementById('rYearNext').addEventListener('click',()=>{
-  if(raporYear<new Date().getFullYear()){raporYear++;renderRapor();}
-  else showToast('Gelecek yıl verisi yok 😄');
-});
-['addModal','bgtModal','catModal'].forEach(id=>{
-  document.getElementById(id).addEventListener('click',e=>{if(e.target===e.currentTarget)e.currentTarget.classList.remove('show');});
-});
-document.querySelectorAll('.modal').forEach(modal=>{
-  let sy=0;
-  modal.addEventListener('touchstart',e=>{sy=e.touches[0].clientY;},{passive:true});
-  modal.addEventListener('touchend',e=>{if(e.changedTouches[0].clientY-sy>80)modal.closest('.moverlay').classList.remove('show');},{passive:true});
-});
-
+document.getElementById('rYearNext').addEventListener('click',()=>{if(raporYear<new Date().getFullYear()){raporYear++;renderRapor();}else showToast('Gelecek yıl verisi yok 😄');});
+['addModal','bgtModal','catModal','catDetailModal','raporMonthModal'].forEach(id=>{document.getElementById(id).addEventListener('click',e=>{if(e.target===e.currentTarget)e.currentTarget.classList.remove('show');});});
+document.querySelectorAll('.modal').forEach(modal=>{let sy=0;modal.addEventListener('touchstart',e=>{sy=e.touches[0].clientY;},{passive:true});modal.addEventListener('touchend',e=>{if(e.changedTouches[0].clientY-sy>80)modal.closest('.moverlay').classList.remove('show');},{passive:true});});
 refreshDashboard();
 </script>
 
-<!-- FIREBASE -->
 <script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js";
-import { getDatabase, ref, onValue, set } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-database.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyDoGB31iJBZFrB-vghg0e8CriLV6ZCQ5tM",
-  authDomain: "aile-b.firebaseapp.com",
-  databaseURL: "https://aile-b-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "aile-b",
-  storageBucket: "aile-b.firebasestorage.app",
-  messagingSenderId: "290477850518",
-  appId: "1:290477850518:web:aeec55dc2ec133cfe8e7b7"
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
-
-// Senkronizasyon durumu göstergesi
-const syncDot = document.createElement('div');
-syncDot.style.cssText = 'position:fixed;top:14px;right:16px;width:10px;height:10px;border-radius:50%;background:#e8960a;z-index:9999;box-shadow:0 2px 6px rgba(0,0,0,.2);transition:background .3s';
-syncDot.title = 'Senkronizasyon durumu';
-document.body.appendChild(syncDot);
-
-function setSyncStatus(status) {
-  if(status === 'ok') syncDot.style.background = '#16b97a';
-  else if(status === 'syncing') syncDot.style.background = '#e8960a';
-  else syncDot.style.background = '#f05a7e';
-}
-
-// Firebase'e yaz
-function syncToFirebase() {
-  setSyncStatus('syncing');
-  const data = {
-    txs: txs,
-    budgets: budgets,
-    cats: CATS,
-    updatedAt: Date.now()
-  };
-  set(ref(db, 'butce'), data)
-    .then(() => setSyncStatus('ok'))
-    .catch(() => setSyncStatus('error'));
-}
-
-// save fonksiyonunu Firebase ile birleştir
-const origSave = window.save;
-window.save = function() {
-  localStorage.setItem('btx', JSON.stringify(txs));
-  localStorage.setItem('bbg', JSON.stringify(budgets));
-  syncToFirebase();
-};
-window.saveCats = function() {
-  localStorage.setItem('bcats', JSON.stringify(CATS));
-  syncToFirebase();
-};
-
-// Firebase'den oku ve canlı dinle
-let ilkYukleme = true;
-onValue(ref(db, 'butce'), (snapshot) => {
-  const data = snapshot.val();
-  if(!data) { setSyncStatus('ok'); return; }
-
-  // Eğer Firebase'deki veri daha yeniyse uygula
-  const localUpdated = parseInt(localStorage.getItem('bupdated') || '0');
-  if(data.updatedAt && data.updatedAt > localUpdated) {
-    if(data.txs)      { txs = data.txs;         localStorage.setItem('btx', JSON.stringify(txs)); }
-    if(data.budgets)  { budgets = data.budgets;  localStorage.setItem('bbg', JSON.stringify(budgets)); }
-    if(data.cats)     { CATS = data.cats;        localStorage.setItem('bcats', JSON.stringify(CATS)); }
-    localStorage.setItem('bupdated', data.updatedAt);
-    if(!ilkYukleme) showToast('🔄 Veriler senkronize edildi!');
+import{initializeApp}from"https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js";
+import{getDatabase,ref,onValue,set}from"https://www.gstatic.com/firebasejs/11.0.0/firebase-database.js";
+const firebaseConfig={apiKey:"AIzaSyDoGB31iJBZFrB-vghg0e8CriLV6ZCQ5tM",authDomain:"aile-b.firebaseapp.com",databaseURL:"https://aile-b-default-rtdb.europe-west1.firebasedatabase.app",projectId:"aile-b",storageBucket:"aile-b.firebasestorage.app",messagingSenderId:"290477850518",appId:"1:290477850518:web:aeec55dc2ec133cfe8e7b7"};
+const app=initializeApp(firebaseConfig);const db=getDatabase(app);
+const syncDot=document.createElement('div');syncDot.style.cssText='position:fixed;top:14px;right:16px;width:10px;height:10px;border-radius:50%;background:#e8960a;z-index:9999;box-shadow:0 2px 6px rgba(0,0,0,.2);transition:background .3s';document.body.appendChild(syncDot);
+function setSyncStatus(s){syncDot.style.background=s==='ok'?'#16b97a':s==='syncing'?'#e8960a':'#f05a7e';}
+function syncToFirebase(){setSyncStatus('syncing');set(ref(db,'butce'),{txs,budgets,cats:CATS,updatedAt:Date.now()}).then(()=>setSyncStatus('ok')).catch(()=>setSyncStatus('error'));}
+window.save=function(){localStorage.setItem('btx',JSON.stringify(txs));localStorage.setItem('bbg',JSON.stringify(budgets));syncToFirebase();};
+window.saveCats=function(){localStorage.setItem('bcats',JSON.stringify(CATS));syncToFirebase();};
+let ilkYukleme=true;
+onValue(ref(db,'butce'),(snapshot)=>{
+  const data=snapshot.val();if(!data){setSyncStatus('ok');return;}
+  const localUpdated=parseInt(localStorage.getItem('bupdated')||'0');
+  if(data.updatedAt&&data.updatedAt>localUpdated){
+    if(data.txs){txs=data.txs;localStorage.setItem('btx',JSON.stringify(txs));}
+    if(data.budgets){budgets=data.budgets;localStorage.setItem('bbg',JSON.stringify(budgets));}
+    if(data.cats){CATS=data.cats;localStorage.setItem('bcats',JSON.stringify(CATS));}
+    localStorage.setItem('bupdated',data.updatedAt);
+    if(!ilkYukleme)showToast('🔄 Veriler senkronize edildi!');
     refreshDashboard();
   }
-  ilkYukleme = false;
-  setSyncStatus('ok');
-}, (error) => {
-  setSyncStatus('error');
-  console.error('Firebase bağlantı hatası:', error);
-});
+  ilkYukleme=false;setSyncStatus('ok');
+},(error)=>{setSyncStatus('error');});
 </script>
 
 <script>
