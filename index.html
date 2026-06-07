@@ -546,20 +546,27 @@ function renderTxList(){
 function renderMiniChart(){
   const bars=document.getElementById('miniBars');
   const tip=document.getElementById('barTip');
+  // Grafik her zaman bugünün takvim ayını baz alır (dönemden bağımsız)
+  const chartNow=new Date();
+  const chartMonth=chartNow.getMonth();
+  const chartYear=chartNow.getFullYear();
   const months=[];
-  for(let i=5;i>=0;i--){let m=curMonth-i,y=curYear;if(m<0){m+=12;y--;}months.push({m,y,lbl:MONTHS[m].slice(0,3)});}
+  for(let i=5;i>=0;i--){let m=chartMonth-i,y=chartYear;if(m<0){m+=12;y--;}months.push({m,y,lbl:MONTHS[m].slice(0,3)});}
+  // Grafik her zaman takvim ayı bazlı (1-30/31)
+  function calMonthTxs(m,y){ return txs.filter(t=>{const d=new Date(t.date+'T12:00:00');return d.getMonth()===m&&d.getFullYear()===y;}); }
   const maxV=Math.max(1,...months.map(({m,y})=>{
-    const t=txs.filter(t=>{const d=new Date(t.date);return d.getMonth()===m&&d.getFullYear()===y;});
+    const t=calMonthTxs(m,y);
     return Math.max(t.filter(t=>t.type==='income').reduce((a,t)=>a+t.amount,0),t.filter(t=>t.type==='expense').reduce((a,t)=>a+t.amount,0));
   }));
   bars.innerHTML=months.map(({m,y,lbl})=>{
-    const t=txs.filter(t=>{const d=new Date(t.date);return d.getMonth()===m&&d.getFullYear()===y;});
+    const t=calMonthTxs(m,y);
     const inc=t.filter(t=>t.type==='income').reduce((a,t)=>a+t.amount,0);
     const exp=t.filter(t=>t.type==='expense').reduce((a,t)=>a+t.amount,0);
     const ih=Math.round((inc/maxV)*70);
     const eh=Math.round((exp/maxV)*70);
     const isCur=(m===curMonth&&y===curYear);
-    return '<div class="mbar-wrap" data-inc="'+inc+'" data-exp="'+exp+'" data-lbl="'+MONTHS[m]+' '+y+'">'
+    const tipLbl=MONTHS[m]+' '+y+' (1-'+new Date(y,m+1,0).getDate()+')';
+    return '<div class="mbar-wrap" data-inc="'+inc+'" data-exp="'+exp+'" data-lbl="'+tipLbl+'">'
       +'<div style="display:flex;gap:2px;align-items:flex-end;width:100%">'
       +'<div class="mbar inc" style="height:'+ih+'px;flex:1;opacity:'+(isCur?1:0.65)+'"></div>'
       +'<div class="mbar exp" style="height:'+eh+'px;flex:1;opacity:'+(isCur?1:0.65)+'"></div>'
