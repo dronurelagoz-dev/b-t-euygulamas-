@@ -285,6 +285,25 @@ select option{background:#fff;color:var(--text)}
   </div>
 </div>
 
+<!-- AYARLAR -->
+<div class="page" id="page-ayarlar">
+  <div style="padding:20px 0 0">
+    <div class="section">
+      <div class="sec-title">⚙️ Bütçe Ayarları</div>
+      <div style="background:var(--surface);border:1.5px solid var(--border2);border-radius:var(--rs);padding:20px;box-shadow:0 4px 0 var(--border2);margin-bottom:16px">
+        <div class="flbl">Bütçe Başlangıç Günü</div>
+        <div style="font-size:13px;color:var(--text2);font-weight:600;margin-bottom:14px">Maaş günün hangisi? Bütçe o günden başlar.</div>
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:16px" id="dayGrid"></div>
+        <div style="background:var(--accent-bg);border:1.5px solid var(--accent-b);border-radius:var(--rx);padding:12px;font-size:13px;font-weight:700;color:var(--accent)" id="dayPreview"></div>
+      </div>
+      <div style="background:var(--surface);border:1.5px solid var(--border2);border-radius:var(--rs);padding:20px;box-shadow:0 4px 0 var(--border2)">
+        <div class="flbl">Hakkında</div>
+        <div style="font-size:13px;color:var(--text2);font-weight:600;line-height:1.6">Bütçe Takip v2.0<br>Tüm veriler Firebase'de senkronize.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <button class="add-btn" id="addBtn"><span style="font-size:22px;line-height:1">＋</span> İşlem Ekle</button>
 
 <div class="bnav">
@@ -292,6 +311,7 @@ select option{background:#fff;color:var(--text)}
   <div class="nitem" data-page="chart"><div class="nico">🥧</div><div>Grafik</div></div>
   <div class="nitem" data-page="budget"><div class="nico">🎯</div><div>Bütçe</div></div>
   <div class="nitem" data-page="rapor"><div class="nico">📋</div><div>Rapor</div></div>
+  <div class="nitem" data-page="ayarlar"><div class="nico">⚙️</div><div>Ayarlar</div></div>
 </div>
 
 <!-- ADD MODAL -->
@@ -377,17 +397,86 @@ let selSlice = null;
 let raporYear = new Date().getFullYear();
 let newCatIsIncome = false;
 let selEmoji = '😀';
+let startDay = parseInt(localStorage.getItem('bstartday') || '1');
 
 function save(){ localStorage.setItem('btx',JSON.stringify(txs)); localStorage.setItem('bbg',JSON.stringify(budgets)); }
 function saveCats(){ localStorage.setItem('bcats',JSON.stringify(CATS)); }
+function saveStartDay(){ localStorage.setItem('bstartday', startDay); }
 function fmt(n){ return n.toLocaleString('tr-TR',{minimumFractionDigits:0,maximumFractionDigits:2}); }
 function getCat(id){ return CATS.find(c=>c.id===id) || CATS[CATS.length-1]; }
 function isIncCat(c){ return c.isIncome === true; }
-function monthTxs(){ return txs.filter(t=>{const d=new Date(t.date);return d.getMonth()===curMonth&&d.getFullYear()===curYear;}); }
+
+// Dönem başlangıç ve bitiş tarihlerini hesapla (startDay'e göre)
+function getPeriodRange(month, year) {
+  if(startDay === 1) {
+    const start = new Date(year, month, 1);
+    const end = new Date(year, month+1, 0);
+    return {start, end};
+  }
+  // Örn: startDay=15 → 15 Mayıs - 14 Haziran
+  const start = new Date(year, month, startDay);
+  const end = new Date(year, month+1, startDay-1);
+  return {start, end};
+}
+
+function periodLabel(month, year) {
+  if(startDay === 1) return MONTHS[month]+' '+year;
+  const {start, end} = getPeriodRange(month, year);
+  const s = start.toLocaleDateString('tr-TR',{day:'numeric',month:'short'});
+  const e = end.toLocaleDateString('tr-TR',{day:'numeric',month:'short'});
+  return s+' – '+e;
+}
+
+function monthTxs(){
+  if(startDay === 1) {
+    return txs.filter(t=>{const d=new Date(t.date);return d.getMonth()===curMonth&&d.getFullYear()===curYear;});
+  }
+  const {start, end} = getPeriodRange(curMonth, curYear);
+  return txs.filter(t=>{
+    const d = new Date(t.date+'T12:00:00');
+    return d >= start && d <= end;
+  });
+}
+
+// ── AYARLAR ──
+function renderDayGrid() {
+  const grid = document.getElementById('dayGrid');
+  if(!grid) return;
+  const days = [1,5,10,14,15,16,20,25,28,30];
+  grid.innerHTML = days.map(d => {
+    const sel = startDay===d;
+    return '<button onclick="setStartDay('+d+')" style="padding:10px 4px;border-radius:'+( sel?'10px':'8px')+';border:2px solid '+(sel?'var(--accent)':'var(--border2)')+';background:'+(sel?'var(--accent)':'var(--surface2)')+';color:'+(sel?'#fff':'var(--text2)')+';font-family:Nunito,sans-serif;font-size:14px;font-weight:800;cursor:pointer;box-shadow:0 3px 0 '+(sel?'var(--accent-s)':'var(--border2)')+';transition:all .15s">'+d+'</button>';
+  }).join('');
+  updateDayPreview();
+}
+function updateDayPreview() {
+  const prev = document.getElementById('dayPreview');
+  if(!prev) return;
+  const now = new Date();
+  const lbl = periodLabel(now.getMonth(), now.getFullYear());
+  prev.textContent = startDay===1 ? 'Takvim ayı: 1 - ay sonu' : 'Mevcut dönem: '+lbl;
+}
+window.setStartDay = function(d) {
+  startDay = d;
+  saveStartDay();
+  renderDayGrid();
+  // curMonth'u yeniden hesapla
+  const now = new Date();
+  if(startDay>1 && now.getDate()<startDay) {
+    curMonth = now.getMonth()-1 < 0 ? 11 : now.getMonth()-1;
+    curYear = now.getMonth()-1 < 0 ? now.getFullYear()-1 : now.getFullYear();
+  } else {
+    curMonth = now.getMonth();
+    curYear = now.getFullYear();
+  }
+  refreshDashboard();
+  showToast('Başlangıç günü '+d+' olarak ayarlandı ✓');
+};
+
 function showToast(msg){ const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2300); }
 
 function refreshDashboard(){
-  document.getElementById('monthLbl').textContent = MONTHS[curMonth]+' '+curYear;
+  document.getElementById('monthLbl').textContent = periodLabel(curMonth, curYear);
   const mt = monthTxs();
   const income = mt.filter(t=>t.type==='income').reduce((a,t)=>a+t.amount,0);
   const expense = mt.filter(t=>t.type==='expense').reduce((a,t)=>a+t.amount,0);
@@ -420,21 +509,38 @@ function renderTxList(){
   const list=document.getElementById('txList');
   let data=monthTxs();
   if(curFilter!=='all')data=data.filter(t=>t.type===curFilter);
-  data=data.slice().reverse().slice(0,25);
+  data=data.slice().sort((a,b)=>new Date(b.date)-new Date(a.date)||parseInt(b.id)-parseInt(a.id));
   if(!data.length){list.innerHTML='<div class="empty"><div>🧾</div><p>Bu ay henüz işlem yok</p></div>';return;}
-  list.innerHTML=data.map(t=>{
-    const cat=getCat(t.category);
-    const d=new Date(t.date);
-    const ds=d.toLocaleDateString('tr-TR',{day:'numeric',month:'short'});
-    const sign=t.type==='income'?'+':'-';
-    const cls=t.type==='income'?'inc':'exp';
-    return '<div class="tx-item">'
-      +'<div class="tx-icon" style="background:'+catBg(cat)+';border:1.5px solid '+catBr(cat)+'">'+cat.emoji+'</div>'
-      +'<div class="tx-info"><div class="tx-name">'+t.name+'</div><div class="tx-date">'+ds+' · '+cat.name+'</div></div>'
-      +'<div class="tx-amt '+cls+'">'+sign+'₺'+fmt(t.amount)+'</div>'
-      +'<button class="tx-del" data-del="'+t.id+'">🗑</button>'
+  const groups={};
+  data.forEach(t=>{if(!groups[t.date])groups[t.date]=[];groups[t.date].push(t);});
+  const today=new Date().toISOString().split('T')[0];
+  const yesterday=new Date(Date.now()-86400000).toISOString().split('T')[0];
+  let html='';
+  Object.keys(groups).sort((a,b)=>b.localeCompare(a)).forEach(dk=>{
+    const d=new Date(dk+'T12:00:00');
+    let dlbl;
+    if(dk===today)dlbl='Bugün';
+    else if(dk===yesterday)dlbl='Dün';
+    else dlbl=d.toLocaleDateString('tr-TR',{day:'numeric',month:'long',weekday:'short'});
+    const dayTotal=groups[dk].reduce((a,t)=>t.type==='expense'?a-t.amount:a+t.amount,0);
+    const dayColor=dayTotal>=0?'var(--green)':'var(--red)';
+    html+='<div style="display:flex;justify-content:space-between;align-items:center;padding:4px 2px 6px;margin-top:6px">'
+      +'<span style="font-size:11px;font-weight:800;color:var(--text3);text-transform:uppercase;letter-spacing:.06em">'+dlbl+'</span>'
+      +'<span style="font-size:12px;font-weight:800;color:'+dayColor+'">'+(dayTotal>=0?'+':'')+'₺'+fmt(Math.abs(dayTotal))+'</span>'
       +'</div>';
-  }).join('');
+    groups[dk].forEach(t=>{
+      const cat=getCat(t.category);
+      const sign=t.type==='income'?'+':'-';
+      const cls=t.type==='income'?'inc':'exp';
+      html+='<div class="tx-item">'
+        +'<div class="tx-icon" style="background:'+catBg(cat)+';border:1.5px solid '+catBr(cat)+'">'+cat.emoji+'</div>'
+        +'<div class="tx-info"><div class="tx-name">'+t.name+'</div><div class="tx-date">'+cat.name+'</div></div>'
+        +'<div class="tx-amt '+cls+'">'+sign+'₺'+fmt(t.amount)+'</div>'
+        +'<button class="tx-del" data-del="'+t.id+'">🗑</button>'
+        +'</div>';
+    });
+  });
+  list.innerHTML=html;
 }
 
 function renderMiniChart(){
@@ -689,7 +795,10 @@ document.getElementById('monthBtn').addEventListener('click',()=>{
   curMonth++;
   if(curMonth>11){curMonth=0;curYear++;}
   const now=new Date();
-  if(curYear>now.getFullYear()||(curYear===now.getFullYear()&&curMonth>now.getMonth())){curMonth=0;curYear=now.getFullYear()-1;}
+  const maxMonth = startDay>1&&now.getDate()<startDay ? now.getMonth()-1 : now.getMonth();
+  const adjMax = maxMonth<0?11:maxMonth;
+  const adjYear = maxMonth<0?now.getFullYear()-1:now.getFullYear();
+  if(curYear>adjYear||(curYear===adjYear&&curMonth>adjMax)){curMonth=adjMax;curYear=adjYear;}
   refreshDashboard();
   if(document.getElementById('page-chart').classList.contains('active'))renderPie();
 });
@@ -702,6 +811,7 @@ document.querySelectorAll('.nitem').forEach(el=>{
     el.classList.add('active');
     if(pg==='chart'){selSlice=null;renderPie();}
     if(pg==='rapor'){raporYear=curYear;renderRapor();}
+    if(pg==='ayarlar'){renderDayGrid();}
   });
 });
 document.querySelectorAll('.tab').forEach(el=>{
