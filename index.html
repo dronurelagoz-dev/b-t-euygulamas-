@@ -240,6 +240,11 @@ select option{background:#fff;color:var(--text)}
 
 <div class="page" id="page-chart">
   <div style="padding:16px 0 0">
+    <div class="rapor-year-nav" style="margin:16px 20px 12px">
+      <button class="rapor-year-btn" id="pieMonthPrev">◀</button>
+      <div class="rapor-year-lbl" style="font-size:14px" id="pieMonthLbl"></div>
+      <button class="rapor-year-btn" id="pieMonthNext">▶</button>
+    </div>
     <div class="pie-toggle">
       <button class="ptbtn active" id="pieExpBtn">💸 Giderler</button>
       <button class="ptbtn" id="pieIncBtn">💰 Gelirler</button>
@@ -394,6 +399,8 @@ let curMonth = new Date().getMonth();
 let curYear = new Date().getFullYear();
 let pieMode = 'expense';
 let selSlice = null;
+let pieMonth = new Date().getMonth();
+let pieYear = new Date().getFullYear();
 let raporYear = new Date().getFullYear();
 let newCatIsIncome = false;
 let selEmoji = '😀';
@@ -611,7 +618,9 @@ function renderPie(){
   const leg=document.getElementById('pieLeg');
   const clbl=document.getElementById('pieClbl');
   if(!svg)return;
-  const mt=monthTxs().filter(t=>t.type===pieMode);
+  // Pasta grafik takvim ayı bazlı (1-30/31)
+  document.getElementById('pieMonthLbl').textContent = MONTHS[pieMonth]+' '+pieYear;
+  const mt=txs.filter(t=>{const d=new Date(t.date+'T12:00:00');return d.getMonth()===pieMonth&&d.getFullYear()===pieYear&&t.type===pieMode;});
   const map={};
   mt.forEach(t=>{map[t.category]=(map[t.category]||0)+t.amount;});
   const total=Object.values(map).reduce((a,b)=>a+b,0);
@@ -816,7 +825,7 @@ document.querySelectorAll('.nitem').forEach(el=>{
     document.getElementById('page-'+pg).classList.add('active');
     document.querySelectorAll('.nitem').forEach(n=>n.classList.remove('active'));
     el.classList.add('active');
-    if(pg==='chart'){selSlice=null;renderPie();}
+    if(pg==='chart'){selSlice=null;pieMonth=new Date().getMonth();pieYear=new Date().getFullYear();renderPie();}
     if(pg==='rapor'){raporYear=curYear;renderRapor();}
     if(pg==='ayarlar'){renderDayGrid();}
   });
@@ -830,6 +839,18 @@ document.querySelectorAll('.tab').forEach(el=>{
 });
 document.getElementById('pieExpBtn').addEventListener('click',()=>{pieMode='expense';selSlice=null;document.getElementById('pieExpBtn').classList.add('active');document.getElementById('pieIncBtn').classList.remove('active');renderPie();});
 document.getElementById('pieIncBtn').addEventListener('click',()=>{pieMode='income';selSlice=null;document.getElementById('pieIncBtn').classList.add('active');document.getElementById('pieExpBtn').classList.remove('active');renderPie();});
+document.getElementById('pieMonthPrev').addEventListener('click',()=>{
+  pieMonth--; if(pieMonth<0){pieMonth=11;pieYear--;} selSlice=null; renderPie();
+});
+document.getElementById('pieMonthNext').addEventListener('click',()=>{
+  const now=new Date();
+  pieMonth++; if(pieMonth>11){pieMonth=0;pieYear++;}
+  if(pieYear>now.getFullYear()||(pieYear===now.getFullYear()&&pieMonth>now.getMonth())){
+    pieMonth=now.getMonth(); pieYear=now.getFullYear();
+    showToast('Gelecek ay verisi yok 😄'); return;
+  }
+  selSlice=null; renderPie();
+});
 document.getElementById('pieChart').addEventListener('click',e=>{const p=e.target.closest('path');if(!p)return;const idx=parseInt(p.dataset.idx);if(isNaN(idx))return;selSlice=selSlice===idx?null:idx;renderPie();});
 document.getElementById('pieLeg').addEventListener('click',e=>{const it=e.target.closest('.plit');if(!it)return;const idx=parseInt(it.dataset.idx);selSlice=selSlice===idx?null:idx;renderPie();});
 document.getElementById('addBtn').addEventListener('click',()=>{
